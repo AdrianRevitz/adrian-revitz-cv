@@ -583,29 +583,6 @@ button:focus-visible,
   border-top: 1px dashed var(--border);
 }
 
-.timeline-degree {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  margin: 0;
-}
-
-.timeline-program-sub {
-  margin-left: 1.25rem;
-  padding-left: 1rem;
-  border-left: 2px solid var(--border);
-}
-
-.timeline-program-sub .timeline-subtitle {
-  font-size: 0.78rem;
-  opacity: 0.8;
-}
-
-.timeline-program-sub .timeline-note {
-  font-size: 0.85rem;
-  opacity: 0.85;
-}
-
 .timeline-badge-more {
   border-style: dashed;
   color: var(--text-dim);
@@ -617,14 +594,6 @@ button:focus-visible,
   display: flex;
   align-items: center;
   min-height: 3.25rem;
-}
-
-.timeline-item-more .timeline-note {
-  font-style: italic;
-}
-
-.section-footer {
-  margin-top: 1.75rem;
 }
 
 /* ---------- Placeholder pages ---------- */

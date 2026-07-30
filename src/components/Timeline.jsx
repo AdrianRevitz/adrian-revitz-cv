@@ -13,15 +13,11 @@ export function TimelineItem({ badge, current = false, delay = 0, children }) {
   )
 }
 
-export function TimelineMore({ count, delay = 0 }) {
+export function TimelineMore({ delay = 0, children }) {
   return (
     <Reveal className="timeline-item timeline-item-more" delay={delay}>
       <div className="timeline-badge timeline-badge-more">⋯</div>
-      <div className="timeline-content">
-        <p className="timeline-note">
-          +{count} earlier role{count === 1 ? '' : 's'} — see full experience for details
-        </p>
-      </div>
+      <div className="timeline-content">{children}</div>
     </Reveal>
   )
 }

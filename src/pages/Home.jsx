@@ -60,13 +60,12 @@ export default function Home() {
                 </TimelineItem>
               )
             })}
-          <TimelineMore count={HOME_HIDDEN_COMPANIES.length} delay={300} />
+          <TimelineMore delay={300}>
+            <Link className="btn" to="/experience">
+              Read full experience ↗
+            </Link>
+          </TimelineMore>
         </Timeline>
-        <div className="section-footer">
-          <Link className="btn" to="/experience">
-            Read full experience ↗
-          </Link>
-        </div>
       </section>
 
       <section className="section">
@@ -83,12 +82,9 @@ export default function Home() {
                 </h3>
                 {entry.group ? (
                   entry.programs.map((program) => (
-                    <div
-                      className={`timeline-program ${program.highlight ? '' : 'timeline-program-sub'}`}
-                      key={program.degree}
-                    >
+                    <div className="timeline-program" key={program.degree}>
                       <div className="timeline-heading">
-                        <p className={program.highlight ? 'timeline-degree' : 'timeline-subtitle'} style={{ margin: 0 }}>
+                        <p className="timeline-subtitle" style={{ margin: 0 }}>
                           {program.degree}
                         </p>
                         <span className="timeline-period">{program.period}</span>

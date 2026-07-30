@@ -3,11 +3,9 @@ import Reveal from '../components/Reveal.jsx'
 
 function ProgramBlock({ program }) {
   return (
-    <div className={`role-block ${program.highlight ? '' : 'timeline-program-sub'}`}>
+    <div className="role-block">
       <div className="role-header">
-        <h3 className={program.highlight ? 'role-title' : 'role-company'} style={program.highlight ? undefined : { fontSize: '0.9rem' }}>
-          {program.degree}
-        </h3>
+        <h3 className="role-title">{program.degree}</h3>
         <span className="role-period">{program.period}</span>
       </div>
       {program.description && <p className="role-description">{program.description}</p>}
