@@ -83,9 +83,12 @@ export default function Home() {
                 </h3>
                 {entry.group ? (
                   entry.programs.map((program) => (
-                    <div className="timeline-program" key={program.degree}>
+                    <div
+                      className={`timeline-program ${program.highlight ? '' : 'timeline-program-sub'}`}
+                      key={program.degree}
+                    >
                       <div className="timeline-heading">
-                        <p className="timeline-subtitle" style={{ margin: 0 }}>
+                        <p className={program.highlight ? 'timeline-degree' : 'timeline-subtitle'} style={{ margin: 0 }}>
                           {program.degree}
                         </p>
                         <span className="timeline-period">{program.period}</span>

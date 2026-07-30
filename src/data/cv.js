@@ -165,8 +165,18 @@ export const education = [
         degree: 'Master of Science, Digital Innovation & Management',
         period: 'Jul 2026 – Jun 2028',
         status: 'current',
+        highlight: true,
         description: '',
         skills: [],
+      },
+      {
+        degree: 'Bachelor of Science, Global Business Informatics',
+        period: 'Aug 2023 – Jul 2026',
+        status: 'completed',
+        highlight: true,
+        description:
+          "Bachelor's degree in Global Business Informatics focusing on the interplay between business, IT, data, and programming. The program covers business process analysis, information systems, data management, and programming, with a particular focus on digital transformation, data-driven decision-making, and organizational efficiency.",
+        skills: ['Business Process Improvement', 'Operational Efficiency', '+5 more'],
       },
       {
         degree: 'Exchange Semester at City University of Hong Kong — Business Administration and Management, General',
@@ -176,14 +186,6 @@ export const education = [
         description:
           'Exchange semester in Hong Kong. Completed coursework in Business Intelligence and Analytics, Operations Management, and Information Management, with a focus on data-driven decision-making and organizational processes.',
         skills: ['Leadership', 'Business Intelligence', '+2 more'],
-      },
-      {
-        degree: 'Bachelor of Science, Global Business Informatics',
-        period: 'Aug 2023 – Jul 2026',
-        status: 'completed',
-        description:
-          "Bachelor's degree in Global Business Informatics focusing on the interplay between business, IT, data, and programming. The program covers business process analysis, information systems, data management, and programming, with a particular focus on digital transformation, data-driven decision-making, and organizational efficiency.",
-        skills: ['Business Process Improvement', 'Operational Efficiency', '+5 more'],
       },
     ],
   },
