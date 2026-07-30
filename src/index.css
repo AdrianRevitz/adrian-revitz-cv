@@ -577,6 +577,29 @@ button:focus-visible,
   margin: 0;
 }
 
+.timeline-program + .timeline-program {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border);
+}
+
+.timeline-badge-more {
+  border-style: dashed;
+  color: var(--text-dim);
+  background: transparent;
+  font-size: 1.1rem;
+}
+
+.timeline-item-more .timeline-content {
+  display: flex;
+  align-items: center;
+  min-height: 3.25rem;
+}
+
+.timeline-item-more .timeline-note {
+  font-style: italic;
+}
+
 .section-footer {
   margin-top: 1.75rem;
 }
