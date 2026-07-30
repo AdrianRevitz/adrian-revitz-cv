@@ -37,6 +37,7 @@ export const skills = [
 export const experience = [
   {
     company: 'Pinetree Venture Partners',
+    badge: 'PVP',
     role: 'Junior Analyst',
     employment: 'Part-time',
     period: 'May 2026 – Present',
@@ -48,6 +49,7 @@ export const experience = [
   },
   {
     company: 'Semler IT',
+    badge: 'SI',
     group: true,
     groupNote: 'Semler Gruppen · 3 yrs 11 mos. total',
     roles: [
@@ -88,6 +90,7 @@ export const experience = [
   },
   {
     company: 'Dansk Sundhedsteam',
+    badge: 'DST',
     role: 'Web Developer',
     employment: 'Freelance',
     period: 'Feb 2024 – Jul 2024',
@@ -99,6 +102,7 @@ export const experience = [
   },
   {
     company: 'Danish Patient Safety Authority',
+    badge: 'DPSA',
     role: 'Service Desk Employee, COVID-19 Contact Tracing Unit',
     employment: 'Full-time',
     period: 'Dec 2020 – Jan 2022',
@@ -111,6 +115,7 @@ export const experience = [
   },
   {
     company: 'Coop Denmark',
+    badge: 'COOP',
     group: true,
     groupNote: 'Part-time · 2 yrs 3 mos. total',
     roles: [
@@ -138,6 +143,7 @@ export const experience = [
   },
   {
     company: 'føtex, Salling Group',
+    badge: 'FTX',
     role: 'Young Worker',
     employment: 'Part-time',
     period: 'Sep 2016 – Aug 2017',
@@ -152,31 +158,39 @@ export const experience = [
 export const education = [
   {
     school: 'IT University of Copenhagen',
+    badge: 'ITU',
     degree: 'Master of Science, Digital Innovation & Management',
     period: 'Jul 2026 – Jun 2028',
+    status: 'current',
     description: '',
     skills: [],
   },
   {
     school: 'IT University of Copenhagen',
+    badge: 'ITU',
     degree: 'Bachelor of Science, Global Business Informatics',
     period: 'Aug 2023 – Jul 2026',
+    status: 'completed',
     description:
       "Bachelor's degree in Global Business Informatics focusing on the interplay between business, IT, data, and programming. The program covers business process analysis, information systems, data management, and programming, with a particular focus on digital transformation, data-driven decision-making, and organizational efficiency.",
     skills: ['Business Process Improvement', 'Operational Efficiency', '+5 more'],
   },
   {
     school: 'City University of Hong Kong',
+    badge: 'CityU',
     degree: 'Exchange Semester, Business Administration and Management, General',
     period: 'Aug 2025 – Dec 2025',
+    status: 'completed',
     description:
       'Exchange semester in Hong Kong. Completed coursework in Business Intelligence and Analytics, Operations Management, and Information Management, with a focus on data-driven decision-making and organizational processes.',
     skills: ['Leadership', 'Business Intelligence', '+2 more'],
   },
   {
     school: 'Nørre Gymnasium',
+    badge: 'NG',
     degree: 'Upper Secondary School Diploma — Social Studies A, Mathematics A, Media Studies B',
     period: '2017 – 2020',
+    status: 'completed',
     description: '',
     skills: [],
   },
