@@ -42,7 +42,7 @@ export const experience = [
     employment: 'Part-time',
     period: 'May 2026 – Present',
     duration: '3 mos.',
-    location: 'Copenhagen · Hybrid',
+    location: 'Copenhagen, Denmark',
     description:
       "Implementing and configuring the firm's CRM system, managing the company website, and organizing data storage and internal workflows — using AI to work smarter across the board.",
     bullets: [],
@@ -59,7 +59,7 @@ export const experience = [
         employment: 'Part-time',
         period: 'Aug 2023 – Present',
         duration: '3 yrs',
-        location: 'Capital Region of Denmark · Hybrid',
+        location: 'Copenhagen, Denmark',
         description:
           'Student assistant in IT Operations at Semler Gruppen, responsible for daily support and stable operation of internal IT systems across the organization.',
         bullets: [
@@ -76,7 +76,7 @@ export const experience = [
         employment: 'Full-time',
         period: 'Sep 2022 – Aug 2023',
         duration: '1 yr',
-        location: 'Copenhagen Municipality, Capital Region of Denmark',
+        location: 'Copenhagen, Denmark',
         description:
           'Reliable IT support (1st & 2nd level) across Microsoft 365, Azure AD, and Active Directory — troubleshooting hardware, network, and client environments to keep IT operations stable across a large organization.',
         bullets: [
@@ -97,7 +97,7 @@ export const experience = [
     employment: 'Freelance',
     period: 'Feb 2024 – Jul 2024',
     duration: '6 mos.',
-    location: 'Capital Region of Denmark · Hybrid',
+    location: 'Copenhagen, Denmark',
     description: 'Website construction and web development.',
     bullets: [],
     skills: [],
@@ -109,7 +109,7 @@ export const experience = [
     employment: 'Full-time',
     period: 'Dec 2020 – Jan 2022',
     duration: '1 yr 2 mos.',
-    location: 'Copenhagen Municipality, Capital Region of Denmark',
+    location: 'Copenhagen, Denmark',
     description:
       'Guided citizens and others on current COVID-19 guidelines, aiming to break chains of infection and reduce the spread of the virus in Denmark.',
     bullets: [],
@@ -126,7 +126,7 @@ export const experience = [
         employment: 'Part-time',
         period: 'Aug 2019 – Dec 2020',
         duration: '1 yr 5 mos.',
-        location: '',
+        location: 'Copenhagen, Denmark',
         description: '',
         bullets: [],
         skills: ['Customer Service', 'Customer Support', '+4 more'],
@@ -136,7 +136,7 @@ export const experience = [
         employment: 'Part-time',
         period: 'Oct 2018 – Jul 2019',
         duration: '10 mos.',
-        location: 'Copenhagen Municipality, Capital Region of Denmark',
+        location: 'Copenhagen, Denmark',
         description: '',
         bullets: [],
         skills: ['Customer Support', 'Customer Experience', '+1 more'],
@@ -144,13 +144,13 @@ export const experience = [
     ],
   },
   {
-    company: 'føtex, Salling Group',
+    company: 'Føtex',
     badge: 'FTX',
     role: 'Young Worker',
     employment: 'Part-time',
     period: 'Sep 2016 – Aug 2017',
     duration: '1 yr',
-    location: 'Copenhagen Municipality, Capital Region of Denmark',
+    location: 'Copenhagen, Denmark',
     description: '',
     bullets: [],
     skills: ['Customer Support', 'Customer Experience', '+1 more'],

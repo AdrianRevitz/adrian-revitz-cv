@@ -2,8 +2,9 @@ import { experience } from '../data/cv.js'
 import Reveal from '../components/Reveal.jsx'
 
 function RoleBlock({ role }) {
+  const isCurrent = role.period.includes('Present')
   return (
-    <div className="role-block">
+    <div className={`role-block ${isCurrent ? 'role-block-current' : ''}`}>
       <div className="role-header">
         <h3 className="role-title">{role.role}</h3>
         <span className="role-period">
@@ -38,7 +39,7 @@ export default function Experience() {
       <div className="section">
         {experience.map((entry, i) => (
           <Reveal className="card" delay={Math.min(i * 60, 300)} key={entry.company}>
-            <h2 className="role-title" style={{ marginBottom: '0.25rem' }}>
+            <h2 className="company-title" style={{ marginBottom: '0.25rem' }}>
               {entry.company}
             </h2>
             {entry.groupNote && <p className="card-group-note">{entry.groupNote}</p>}

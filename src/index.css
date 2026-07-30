@@ -394,6 +394,14 @@ button:focus-visible,
   transform: translateY(-2px);
 }
 
+.company-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin: 0;
+}
+
 .card-group-note {
   font-family: var(--mono);
   font-size: 0.78rem;
@@ -407,6 +415,15 @@ button:focus-visible,
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   border-top: 1px dashed var(--border);
+}
+
+.role-block-current {
+  border-left: 2px solid var(--accent);
+  padding-left: 0.9rem;
+}
+
+.role-block-current .role-title {
+  color: var(--accent);
 }
 
 .role-header {
