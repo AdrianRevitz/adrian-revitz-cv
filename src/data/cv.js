@@ -161,7 +161,6 @@ export const education = [
   {
     school: 'IT University of Copenhagen',
     badge: 'ITU',
-    flag: '🇩🇰',
     location: 'Copenhagen, Denmark',
     group: true,
     programs: [
@@ -186,7 +185,6 @@ export const education = [
   {
     school: 'City University of Hong Kong',
     badge: 'CityU',
-    flag: '🇭🇰',
     location: 'Hong Kong S.A.R, China',
     degree: 'Exchange Semester, Business Administration and Management, General',
     period: 'Aug 2025 – Dec 2025',
@@ -198,7 +196,6 @@ export const education = [
   {
     school: 'Nørre Gymnasium',
     badge: 'NG',
-    flag: '🇩🇰',
     location: 'Copenhagen, Denmark',
     degree: 'Upper Secondary School Diploma — Social Studies A, Mathematics A, Media Studies B',
     period: '2017 – 2020',

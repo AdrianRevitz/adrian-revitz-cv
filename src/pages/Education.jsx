@@ -33,7 +33,7 @@ export default function Education() {
           return (
             <Reveal className={`card ${isCurrent ? 'card-current' : ''}`} delay={Math.min(i * 60, 300)} key={entry.school}>
               <h2 className="school-title" style={{ marginBottom: '0.15rem' }}>
-                {entry.flag} {entry.school}
+                {entry.school}
               </h2>
               {entry.location && <p className="role-location" style={{ marginBottom: entry.group ? '0.75rem' : '0.25rem' }}>{entry.location}</p>}
               {entry.group ? (
