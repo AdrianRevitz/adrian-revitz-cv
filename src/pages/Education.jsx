@@ -35,9 +35,9 @@ export default function Education() {
             ) : (
               <>
                 <div className="role-header" style={{ marginTop: '0.25rem' }}>
-                  <p className="role-company" style={{ margin: 0 }}>
+                  <h3 className="role-title" style={{ margin: 0 }}>
                     {entry.degree}
-                  </p>
+                  </h3>
                   <span className="role-period">{entry.period}</span>
                 </div>
                 {entry.description && <p className="role-description">{entry.description}</p>}

@@ -54,7 +54,7 @@ export default function Home() {
                           {role.employment}
                         </p>
                         <span className="timeline-period">
-                          {role.period} · {role.duration}
+                          {role.period} ({role.duration})
                         </span>
                       </div>
                       {role.description && <p className="timeline-note">{role.description}</p>}
@@ -69,7 +69,7 @@ export default function Home() {
                         {entry.employment}
                       </p>
                       <span className="timeline-period">
-                        {entry.period} · {entry.duration}
+                        {entry.period} ({entry.duration})
                       </span>
                     </div>
                     {entry.description && <p className="timeline-note">{entry.description}</p>}
@@ -101,7 +101,7 @@ export default function Home() {
                   entry.programs.map((program) => (
                     <div className="timeline-program" key={program.degree}>
                       <div className="timeline-heading">
-                        <p className="timeline-subtitle" style={{ margin: 0 }}>
+                        <p className="timeline-degree" style={{ margin: 0 }}>
                           {program.degree}
                         </p>
                         <span className="timeline-period">{program.period}</span>
@@ -112,7 +112,7 @@ export default function Home() {
                 ) : (
                   <>
                     <div className="timeline-heading">
-                      <p className="timeline-subtitle" style={{ margin: 0 }}>
+                      <p className="timeline-degree" style={{ margin: 0 }}>
                         {entry.degree}
                       </p>
                       <span className="timeline-period">{entry.period}</span>

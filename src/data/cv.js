@@ -104,7 +104,7 @@ export const experience = [
   {
     company: 'Danish Patient Safety Authority',
     badge: 'DPSA',
-    role: 'Service Desk Employee, COVID-19 Contact Tracing Unit',
+    role: 'Contact Tracing',
     employment: 'Full-time',
     period: 'Dec 2020 – Jan 2022',
     duration: '1 yr 2 mos.',

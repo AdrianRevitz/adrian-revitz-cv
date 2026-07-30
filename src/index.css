@@ -426,9 +426,8 @@ button:focus-visible,
 }
 
 .role-period {
-  font-family: var(--mono);
-  font-size: 0.8rem;
-  color: var(--accent);
+  font-size: 0.85rem;
+  color: var(--text-dim);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
@@ -564,6 +563,13 @@ button:focus-visible,
   margin: 0.2rem 0 0.5rem;
 }
 
+.timeline-degree {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
 .timeline-role {
   color: var(--accent);
   font-weight: 600;
@@ -580,9 +586,8 @@ button:focus-visible,
 }
 
 .timeline-period {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--accent);
+  font-size: 0.85rem;
+  color: var(--text-dim);
   white-space: nowrap;
 }
 
