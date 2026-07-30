@@ -394,7 +394,13 @@ button:focus-visible,
   transform: translateY(-2px);
 }
 
-.company-title {
+.card-current {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 32px -18px #2dd4bf40;
+}
+
+.company-title,
+.school-title {
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
