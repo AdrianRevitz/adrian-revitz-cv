@@ -43,7 +43,8 @@ export const experience = [
     period: 'May 2026 – Present',
     duration: '3 mos.',
     location: 'Copenhagen · Hybrid',
-    description: 'Doing it better with AI.',
+    description:
+      "Implementing and configuring the firm's CRM system, managing the company website, and organizing data storage and internal workflows — using AI to work smarter across the board.",
     bullets: [],
     skills: [],
   },

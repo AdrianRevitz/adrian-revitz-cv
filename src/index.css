@@ -564,6 +564,21 @@ button:focus-visible,
   margin: 0.2rem 0 0.5rem;
 }
 
+.timeline-role {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.timeline-dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  margin: 0 0.55em;
+  vertical-align: middle;
+}
+
 .timeline-period {
   font-family: var(--mono);
   font-size: 0.78rem;

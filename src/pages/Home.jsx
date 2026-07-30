@@ -49,7 +49,9 @@ export default function Home() {
                     <div className="timeline-program" key={role.role}>
                       <div className="timeline-heading">
                         <p className="timeline-subtitle" style={{ margin: 0 }}>
-                          {role.role}
+                          <span className="timeline-role">{role.role}</span>
+                          <span className="timeline-dot" />
+                          {role.employment}
                         </p>
                         <span className="timeline-period">
                           {role.period} · {role.duration}
@@ -62,7 +64,9 @@ export default function Home() {
                   <>
                     <div className="timeline-heading">
                       <p className="timeline-subtitle" style={{ margin: 0 }}>
-                        {entry.role}
+                        <span className="timeline-role">{entry.role}</span>
+                        <span className="timeline-dot" />
+                        {entry.employment}
                       </p>
                       <span className="timeline-period">
                         {entry.period} · {entry.duration}
