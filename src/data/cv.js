@@ -1,0 +1,183 @@
+export const profile = {
+  name: 'Adrian Wehmüller Revitz',
+  title: 'IT Operations & Business Informatics',
+  tagline: 'Bridging business, data, and technology.',
+  location: 'Copenhagen, Denmark',
+  email: 'adrian.revitz@gmail.com',
+  phone: '+45 50481906',
+  linkedin: 'https://linkedin.com/in/adrian-revitz',
+  about: `Global Business Informatics student and IT operations professional with a
+    background spanning technical support, systems administration, and web
+    development. Currently working as a Junior Analyst while completing a
+    Bachelor's degree focused on the interplay between business, IT, data,
+    and digital transformation. Comfortable moving between hands-on IT
+    operations work and higher-level analysis of business processes.`,
+}
+
+export const skills = [
+  'IT Operations',
+  'Business Process Improvement',
+  'Operational Efficiency',
+  'Technical Support (1st & 2nd Level)',
+  'Microsoft 365',
+  'Azure AD',
+  'Exchange',
+  'Microsoft Teams',
+  'SharePoint',
+  'Active Directory',
+  'IBM Notes',
+  'Web Development',
+  'Customer Service',
+  'Customer Support',
+  'Customer Experience',
+  'Leadership',
+  'Business Intelligence',
+]
+
+export const experience = [
+  {
+    company: 'Pinetree Venture Partners',
+    role: 'Junior Analyst',
+    employment: 'Part-time',
+    period: 'May 2026 – Present',
+    duration: '3 mos.',
+    location: 'Copenhagen · Hybrid',
+    description: 'Doing it better with AI.',
+    bullets: [],
+    skills: [],
+  },
+  {
+    company: 'Semler IT',
+    group: true,
+    groupNote: 'Semler Gruppen · 3 yrs 11 mos. total',
+    roles: [
+      {
+        role: 'Student Assistant',
+        employment: 'Part-time',
+        period: 'Aug 2023 – Present',
+        duration: '3 yrs',
+        location: 'Capital Region of Denmark · Hybrid',
+        description:
+          'Student assistant in IT Operations at Semler Gruppen, responsible for daily support and stable operation of internal IT systems across the organization.',
+        bullets: [
+          'Advanced troubleshooting and 2nd-level support for employees',
+          'Preparation, configuration, and lifecycle management of IT equipment',
+          'User administration and access management',
+          'Contributed to optimizing and automating internal IT processes',
+          'Documentation and standardization of workflows',
+        ],
+        skills: ['IT Operations', 'Business Process Improvement', '+2 more'],
+      },
+      {
+        role: 'IT Support Technician',
+        employment: 'Full-time',
+        period: 'Sep 2022 – Aug 2023',
+        duration: '1 yr',
+        location: 'Copenhagen Municipality, Capital Region of Denmark',
+        description: '',
+        bullets: [
+          'Reliable IT support (1st & 2nd level)',
+          'Microsoft 365, Azure AD, Exchange, Teams, SharePoint',
+          'User administration in Active Directory and IBM Notes',
+          'Troubleshooting hardware, network, and client environments',
+          'Contributed to stable and efficient IT operations across a large organization',
+        ],
+        skills: ['Microsoft Word', 'Technical Support', '+13 more'],
+      },
+    ],
+  },
+  {
+    company: 'Dansk Sundhedsteam',
+    role: 'Web Developer',
+    employment: 'Freelance',
+    period: 'Feb 2024 – Jul 2024',
+    duration: '6 mos.',
+    location: 'Capital Region of Denmark · Hybrid',
+    description: 'Website construction and web development.',
+    bullets: [],
+    skills: [],
+  },
+  {
+    company: 'Danish Patient Safety Authority',
+    role: 'Service Desk Employee, COVID-19 Contact Tracing Unit',
+    employment: 'Full-time',
+    period: 'Dec 2020 – Jan 2022',
+    duration: '1 yr 2 mos.',
+    location: 'Copenhagen Municipality, Capital Region of Denmark',
+    description:
+      'Guided citizens and others on current COVID-19 guidelines, aiming to break chains of infection and reduce the spread of the virus in Denmark.',
+    bullets: [],
+    skills: ['Customer Service', 'Customer Support', '+4 more'],
+  },
+  {
+    company: 'Coop Denmark',
+    group: true,
+    groupNote: 'Part-time · 2 yrs 3 mos. total',
+    roles: [
+      {
+        role: 'Shift Leader / Closing Manager',
+        employment: 'Part-time',
+        period: 'Aug 2019 – Dec 2020',
+        duration: '1 yr 5 mos.',
+        location: '',
+        description: '',
+        bullets: [],
+        skills: ['Customer Service', 'Customer Support', '+4 more'],
+      },
+      {
+        role: 'Service Employee',
+        employment: 'Part-time',
+        period: 'Oct 2018 – Jul 2019',
+        duration: '10 mos.',
+        location: 'Copenhagen Municipality, Capital Region of Denmark',
+        description: '',
+        bullets: [],
+        skills: ['Customer Support', 'Customer Experience', '+1 more'],
+      },
+    ],
+  },
+  {
+    company: 'føtex, Salling Group',
+    role: 'Young Worker',
+    employment: 'Part-time',
+    period: 'Sep 2016 – Aug 2017',
+    duration: '1 yr',
+    location: 'Copenhagen Municipality, Capital Region of Denmark',
+    description: '',
+    bullets: [],
+    skills: ['Customer Support', 'Customer Experience', '+1 more'],
+  },
+]
+
+export const education = [
+  {
+    school: 'IT University of Copenhagen',
+    degree: 'Master of Science, Digital Innovation & Management',
+    period: 'Jul 2026 – Jun 2028',
+    description: '',
+    skills: [],
+  },
+  {
+    school: 'IT University of Copenhagen',
+    degree: 'Bachelor of Science, Global Business Informatics',
+    period: 'Aug 2023 – Jul 2026',
+    description:
+      "Bachelor's degree in Global Business Informatics focusing on the interplay between business, IT, data, and programming. The program covers business process analysis, information systems, data management, and programming, with a particular focus on digital transformation, data-driven decision-making, and organizational efficiency.",
+    skills: ['Business Process Improvement', 'Operational Efficiency', '+5 more'],
+  },
+  {
+    school: 'City University of Hong Kong',
+    degree: 'Exchange Semester, Business Administration and Management, General',
+    period: 'Aug 2025 – Dec 2025',
+    description:
+      'Exchange semester in Hong Kong. Completed coursework in Business Intelligence and Analytics, Operations Management, and Information Management, with a focus on data-driven decision-making and organizational processes.',
+    skills: ['Leadership', 'Business Intelligence', '+2 more'],
+  },
+  {
+    school: 'Nørre Gymnasium',
+    degree: 'Upper Secondary School Diploma — Social Studies A, Mathematics A, Media Studies B',
+    period: '2017 – 2020',
+    description: '',
+    skills: [],
+  },
+]
