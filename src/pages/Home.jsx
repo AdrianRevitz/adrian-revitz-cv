@@ -5,16 +5,8 @@ import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx
 
 const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'føtex, Salling Group']
 
-function summarize(entry) {
-  const role = entry.group ? entry.roles[0] : entry
-  return {
-    badge: entry.badge,
-    title: entry.company,
-    subtitle: entry.group ? `${role.role}${entry.roles.length > 1 ? ` · +${entry.roles.length - 1} more role` : ''}` : role.employment,
-    period: `${role.period} · ${role.duration}`,
-    current: role.period.includes('Present'),
-    description: role.description,
-  }
+function isCurrent(entry) {
+  return entry.group ? entry.roles.some((role) => role.period.includes('Present')) : entry.period.includes('Present')
 }
 
 export default function Home() {
@@ -47,19 +39,40 @@ export default function Home() {
         <Timeline>
           {experience
             .filter((entry) => !HOME_HIDDEN_COMPANIES.includes(entry.company))
-            .map((entry, i) => {
-              const item = summarize(entry)
-              return (
-                <TimelineItem badge={item.badge} current={item.current} delay={Math.min(i * 60, 300)} key={entry.company}>
-                  <div className="timeline-heading">
-                    <h3 className="timeline-title">{item.title}</h3>
-                    <span className="timeline-period">{item.period}</span>
-                  </div>
-                  <p className="timeline-subtitle">{item.subtitle}</p>
-                  {item.description && <p className="timeline-note">{item.description}</p>}
-                </TimelineItem>
-              )
-            })}
+            .map((entry, i) => (
+              <TimelineItem badge={entry.badge} current={isCurrent(entry)} delay={Math.min(i * 60, 300)} key={entry.company}>
+                <h3 className="timeline-title" style={{ marginBottom: entry.group ? '0.5rem' : 0 }}>
+                  {entry.company}
+                </h3>
+                {entry.group ? (
+                  entry.roles.map((role) => (
+                    <div className="timeline-program" key={role.role}>
+                      <div className="timeline-heading">
+                        <p className="timeline-subtitle" style={{ margin: 0 }}>
+                          {role.role} · {role.employment}
+                        </p>
+                        <span className="timeline-period">
+                          {role.period} · {role.duration}
+                        </span>
+                      </div>
+                      {role.description && <p className="timeline-note">{role.description}</p>}
+                    </div>
+                  ))
+                ) : (
+                  <>
+                    <div className="timeline-heading">
+                      <p className="timeline-subtitle" style={{ margin: 0 }}>
+                        {entry.role} · {entry.employment}
+                      </p>
+                      <span className="timeline-period">
+                        {entry.period} · {entry.duration}
+                      </span>
+                    </div>
+                    {entry.description && <p className="timeline-note">{entry.description}</p>}
+                  </>
+                )}
+              </TimelineItem>
+            ))}
           <TimelineMore delay={300}>
             <Link className="btn" to="/experience">
               Read full experience ↗
