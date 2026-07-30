@@ -19,15 +19,56 @@ html, body {
   padding: 0;
 }
 
+html {
+  scrollbar-color: var(--border) transparent;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.6;
   background-image:
-    radial-gradient(circle at 15% 0%, #5eead411 0%, transparent 40%),
-    radial-gradient(circle at 85% 20%, #5eead40a 0%, transparent 45%);
+    radial-gradient(ellipse 900px 500px at 12% -5%, #5eead41c 0%, transparent 55%),
+    radial-gradient(ellipse 700px 500px at 88% 15%, #5eead411 0%, transparent 55%),
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: auto, auto, 48px 48px, 48px 48px;
+  background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+  background-attachment: fixed;
   min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, transparent 0%, var(--bg) 85%);
+  z-index: 0;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--text);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
 }
 
 a {
@@ -39,21 +80,97 @@ a:hover {
   text-decoration: underline;
 }
 
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .app-shell {
   max-width: 860px;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 5rem;
+  padding: 1.5rem 1.5rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Reveal on scroll ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal.is-visible .reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------- Nav ---------- */
 
 .nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 3rem;
+  margin: 0 -1.5rem 3rem;
+  padding: 1rem 1.5rem;
   gap: 1rem;
   flex-wrap: wrap;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .nav {
+    background: var(--bg);
+  }
+}
+
+.nav-scrolled {
+  border-bottom-color: var(--border);
 }
 
 .nav-brand {
@@ -66,6 +183,10 @@ a:hover {
   color: var(--accent);
 }
 
+.nav-brand {
+  transition: color 0.15s ease;
+}
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -74,6 +195,7 @@ a:hover {
 }
 
 .nav-links a {
+  position: relative;
   color: var(--text-dim);
   padding: 0.25rem 0;
   border-bottom: 2px solid transparent;
@@ -97,6 +219,7 @@ a:hover {
   color: var(--accent);
   font-size: 0.85rem;
   margin: 0 0 0.75rem;
+  animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .hero-eyebrow::before {
@@ -104,11 +227,27 @@ a:hover {
   color: var(--text-dim);
 }
 
+.hero-eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 1em;
+  margin-left: 0.4em;
+  background: var(--accent);
+  vertical-align: -0.15em;
+  animation: blink-caret 1s step-end infinite;
+}
+
 .hero-name {
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.6rem;
+  font-weight: 800;
   margin: 0 0 0.4rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--text) 40%, var(--accent) 130%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.08s both;
 }
 
 .hero-title {
@@ -116,12 +255,14 @@ a:hover {
   color: var(--text-dim);
   font-size: 1.05rem;
   margin: 0 0 1.5rem;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.16s both;
 }
 
 .hero-about {
   color: var(--text);
   max-width: 620px;
   margin-bottom: 1.75rem;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
 }
 
 .hero-meta {
@@ -132,6 +273,7 @@ a:hover {
   font-size: 0.85rem;
   color: var(--text-dim);
   margin-bottom: 2rem;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 
 .hero-meta span {
@@ -144,6 +286,7 @@ a:hover {
   display: flex;
   gap: 0.9rem;
   flex-wrap: wrap;
+  animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .btn {
@@ -153,13 +296,20 @@ a:hover {
   border-radius: 6px;
   border: 1px solid var(--border);
   color: var(--text);
-  transition: border-color 0.15s ease, background 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .btn:hover {
   border-color: var(--accent);
   background: var(--accent-dim);
   text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .btn-primary {
@@ -167,11 +317,13 @@ a:hover {
   color: #06110f;
   border-color: var(--accent);
   font-weight: 600;
+  box-shadow: 0 0 0 0 var(--accent-dim);
 }
 
 .btn-primary:hover {
   background: var(--accent);
-  opacity: 0.9;
+  opacity: 0.92;
+  box-shadow: 0 6px 24px -6px #2dd4bf66;
 }
 
 /* ---------- Section ---------- */
@@ -215,6 +367,14 @@ a:hover {
   border: 1px solid var(--border);
   background: var(--bg-elevated);
   color: var(--text);
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease, color 0.15s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  color: var(--accent);
+  transform: translateY(-2px);
 }
 
 /* ---------- Cards / Timeline ---------- */
@@ -225,6 +385,13 @@ a:hover {
   border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1.25rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  box-shadow: 0 12px 32px -16px #00000066;
+  transform: translateY(-2px);
 }
 
 .card-group-note {
@@ -263,6 +430,19 @@ a:hover {
   font-size: 0.8rem;
   color: var(--accent);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.role-period::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
+  flex-shrink: 0;
 }
 
 .role-company {
@@ -316,6 +496,15 @@ a:hover {
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.25rem;
+  display: block;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.contact-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 12px 32px -18px #2dd4bf55;
+  transform: translateY(-3px);
+  text-decoration: none;
 }
 
 .contact-card .label {

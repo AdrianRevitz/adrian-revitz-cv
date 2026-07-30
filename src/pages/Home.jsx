@@ -1,4 +1,5 @@
 import { profile, skills } from '../data/cv.js'
+import Reveal from '../components/Reveal.jsx'
 
 export default function Home() {
   return (
@@ -25,16 +26,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
+      <Reveal as="section" className="section">
         <h2 className="section-heading">Skills</h2>
         <div className="skills-grid">
-          {skills.map((skill) => (
-            <span className="skill-pill" key={skill}>
+          {skills.map((skill, i) => (
+            <span className="skill-pill reveal" style={{ transitionDelay: `${i * 25}ms` }} key={skill}>
               {skill}
             </span>
           ))}
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

@@ -1,4 +1,5 @@
 import { profile } from '../data/cv.js'
+import Reveal from '../components/Reveal.jsx'
 
 export default function Contact() {
   return (
@@ -10,22 +11,22 @@ export default function Contact() {
       </p>
 
       <div className="contact-grid section">
-        <a className="contact-card" href={`mailto:${profile.email}`}>
+        <Reveal as="a" className="contact-card" delay={0} href={`mailto:${profile.email}`}>
           <p className="label">Email</p>
           <p className="value">{profile.email}</p>
-        </a>
-        <a className="contact-card" href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
+        </Reveal>
+        <Reveal as="a" className="contact-card" delay={60} href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
           <p className="label">Phone</p>
           <p className="value">{profile.phone}</p>
-        </a>
-        <div className="contact-card">
+        </Reveal>
+        <Reveal className="contact-card" delay={120}>
           <p className="label">Location</p>
           <p className="value">{profile.location}</p>
-        </div>
-        <a className="contact-card" href={profile.linkedin} target="_blank" rel="noreferrer">
+        </Reveal>
+        <Reveal as="a" className="contact-card" delay={180} href={profile.linkedin} target="_blank" rel="noreferrer">
           <p className="label">LinkedIn</p>
           <p className="value">View profile ↗</p>
-        </a>
+        </Reveal>
       </div>
     </section>
   )

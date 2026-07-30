@@ -1,4 +1,5 @@
 import { education } from '../data/cv.js'
+import Reveal from '../components/Reveal.jsx'
 
 export default function Education() {
   return (
@@ -7,8 +8,8 @@ export default function Education() {
       <h1 className="hero-name">Education</h1>
 
       <div className="section">
-        {education.map((entry) => (
-          <div className="card" key={`${entry.school}-${entry.period}`}>
+        {education.map((entry, i) => (
+          <Reveal className="card" delay={Math.min(i * 60, 300)} key={`${entry.school}-${entry.period}`}>
             <div className="role-header">
               <h3 className="role-title">{entry.school}</h3>
               <span className="role-period">{entry.period}</span>
@@ -20,7 +21,7 @@ export default function Education() {
                 <span className="label">skills:</span> {entry.skills.join(', ')}
               </p>
             )}
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

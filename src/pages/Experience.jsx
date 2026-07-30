@@ -1,4 +1,5 @@
 import { experience } from '../data/cv.js'
+import Reveal from '../components/Reveal.jsx'
 
 function RoleBlock({ role }) {
   return (
@@ -35,8 +36,8 @@ export default function Experience() {
       <h1 className="hero-name">Experience</h1>
 
       <div className="section">
-        {experience.map((entry) => (
-          <div className="card" key={entry.company}>
+        {experience.map((entry, i) => (
+          <Reveal className="card" delay={Math.min(i * 60, 300)} key={entry.company}>
             <h2 className="role-title" style={{ marginBottom: '0.25rem' }}>
               {entry.company}
             </h2>
@@ -44,7 +45,7 @@ export default function Experience() {
             {entry.group
               ? entry.roles.map((role) => <RoleBlock role={role} key={role.role} />)
               : <RoleBlock role={entry} />}
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>
