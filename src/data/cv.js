@@ -72,12 +72,13 @@ export const experience = [
         skills: ['IT Operations', 'Business Process Improvement', '+2 more'],
       },
       {
-        role: 'IT Support Technician',
+        role: 'IT-Support',
         employment: 'Full-time',
         period: 'Sep 2022 – Aug 2023',
         duration: '1 yr',
         location: 'Copenhagen Municipality, Capital Region of Denmark',
-        description: '',
+        description:
+          'Reliable IT support (1st & 2nd level) across Microsoft 365, Azure AD, and Active Directory — troubleshooting hardware, network, and client environments to keep IT operations stable across a large organization.',
         bullets: [
           'Reliable IT support (1st & 2nd level)',
           'Microsoft 365, Azure AD, Exchange, Teams, SharePoint',

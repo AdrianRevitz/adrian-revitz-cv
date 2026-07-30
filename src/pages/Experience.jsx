@@ -7,7 +7,7 @@ function RoleBlock({ role }) {
       <div className="role-header">
         <h3 className="role-title">{role.role}</h3>
         <span className="role-period">
-          {role.period} ({role.duration})
+          {role.period} <span className="role-duration">({role.duration})</span>
         </span>
       </div>
       <p className="role-company">{role.employment}</p>

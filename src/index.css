@@ -426,12 +426,19 @@ button:focus-visible,
 }
 
 .role-period {
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+}
+
+.role-duration {
+  font-weight: 400;
+  color: var(--text-dim);
 }
 
 .role-period::before {
@@ -586,9 +593,16 @@ button:focus-visible,
 }
 
 .timeline-period {
-  font-size: 0.85rem;
-  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
   white-space: nowrap;
+}
+
+.timeline-duration {
+  font-weight: 400;
+  color: var(--text-dim);
 }
 
 .timeline-note {

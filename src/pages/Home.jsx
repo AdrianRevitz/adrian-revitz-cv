@@ -54,7 +54,7 @@ export default function Home() {
                           {role.employment}
                         </p>
                         <span className="timeline-period">
-                          {role.period} ({role.duration})
+                          {role.period} <span className="timeline-duration">({role.duration})</span>
                         </span>
                       </div>
                       {role.description && <p className="timeline-note">{role.description}</p>}
@@ -69,7 +69,7 @@ export default function Home() {
                         {entry.employment}
                       </p>
                       <span className="timeline-period">
-                        {entry.period} ({entry.duration})
+                        {entry.period} <span className="timeline-duration">({entry.duration})</span>
                       </span>
                     </div>
                     {entry.description && <p className="timeline-note">{entry.description}</p>}
