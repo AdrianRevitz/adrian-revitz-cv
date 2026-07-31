@@ -5,7 +5,7 @@ export const profile = {
   location: 'Copenhagen, Denmark',
   email: 'adrian.revitz@gmail.com',
   phone: '+45 50481906',
-  linkedin: 'https://linkedin.com/in/adrian-revitz',
+  linkedin: 'https://www.linkedin.com/in/adrianrevitz/',
   about: `Master's student in Digital Innovation & Management at the IT University
     of Copenhagen, currently working as a Junior Analyst at Pinetree Venture
     Partners and as a Student Assistant at Semler IT. Holds a Bachelor's degree
