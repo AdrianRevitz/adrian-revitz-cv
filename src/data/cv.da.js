@@ -1,6 +1,7 @@
 export const profile = {
   name: 'Adrian Wehmüller Revitz',
   shortName: 'Adrian W. Revitz',
+  age: 25,
   title: 'IT-drift & Business Informatics',
   tagline: 'Forbinder forretning, data og teknologi.',
   location: 'København, Danmark',

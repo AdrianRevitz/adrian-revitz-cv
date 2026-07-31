@@ -45,11 +45,6 @@ export default function Home() {
         <Terminal />
       </Reveal>
 
-      <Reveal as="section" className="section">
-        <h2 className="section-heading">{t('headingSystemInfo')}</h2>
-        <NeofetchCard />
-      </Reveal>
-
       <section className="section">
         <h2 className="section-heading">{t('headingExperience')}</h2>
         <Timeline>
@@ -148,6 +143,11 @@ export default function Home() {
           </TimelineMore>
         </Timeline>
       </section>
+
+      <Reveal as="section" className="section">
+        <h2 className="section-heading">{t('headingSystemInfo')}</h2>
+        <NeofetchCard />
+      </Reveal>
 
       <Reveal as="section" className="section">
         <h2 className="section-heading">{t('headingSkills')}</h2>

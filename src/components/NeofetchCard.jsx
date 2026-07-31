@@ -4,12 +4,8 @@ import { getNeofetchFields } from '../data/neofetch.js'
 export default function NeofetchCard() {
   const { cv, lang } = useLanguage()
   const fields = getNeofetchFields(cv, lang)
-  const initials = cv.profile.shortName
-    .split(' ')
-    .map((w) => w[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase()
+  const nameParts = cv.profile.shortName.split(' ')
+  const initials = (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase()
   const host = cv.profile.shortName.toLowerCase().replace(/[^a-z0-9]+/g, '-')
 
   return (
