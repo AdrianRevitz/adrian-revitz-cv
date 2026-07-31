@@ -6,12 +6,10 @@ export const profile = {
   email: 'adrian.revitz@gmail.com',
   phone: '+45 50481906',
   linkedin: 'https://linkedin.com/in/adrian-revitz',
-  about: `Global Business Informatics student and IT operations professional with a
-    background spanning technical support, systems administration, and web
-    development. Currently working as a Junior Analyst while completing a
-    Bachelor's degree focused on the interplay between business, IT, data,
-    and digital transformation. Comfortable moving between hands-on IT
-    operations work and higher-level analysis of business processes.`,
+  about: `Master's student in Digital Innovation & Management at the IT University
+    of Copenhagen, currently working as a Junior Analyst at Pinetree Venture
+    Partners and as a Student Assistant at Semler IT. Holds a Bachelor's degree
+    in Global Business Informatics from the IT University of Copenhagen.`,
 }
 
 export const skills = [
