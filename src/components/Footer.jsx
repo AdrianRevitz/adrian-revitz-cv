@@ -1,13 +1,14 @@
-import { profile } from '../data/cv.js'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function Footer() {
+  const { cv, t } = useLanguage()
   const year = new Date().getFullYear()
   return (
     <footer className="footer">
       <span>
-        © {year} {profile.name}
+        © {year} {cv.profile.name}
       </span>
-      <span>Built with React + Vite</span>
+      <span>{t('footerBuiltWith')}</span>
     </footer>
   )
 }

@@ -1,7 +1,7 @@
-import { education } from '../data/cv.js'
 import Reveal from '../components/Reveal.jsx'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
-function ProgramBlock({ program }) {
+function ProgramBlock({ program, t }) {
   const isCurrent = program.status === 'current'
   return (
     <div className={`role-block ${isCurrent ? 'role-block-current' : ''}`}>
@@ -12,7 +12,7 @@ function ProgramBlock({ program }) {
       {program.description && <p className="role-description">{program.description}</p>}
       {program.skills?.length > 0 && (
         <p className="role-skills">
-          <span className="label">skills:</span> {program.skills.join(', ')}
+          <span className="label">{t('skillsLabel')}</span> {program.skills.join(', ')}
         </p>
       )}
     </div>
@@ -20,10 +20,13 @@ function ProgramBlock({ program }) {
 }
 
 export default function Education() {
+  const { cv, t } = useLanguage()
+  const { education } = cv
+
   return (
     <section>
-      <p className="hero-eyebrow">background</p>
-      <h1 className="hero-name">Education</h1>
+      <p className="hero-eyebrow">{t('eyebrowBackground')}</p>
+      <h1 className="hero-name">{t('headingEducation')}</h1>
 
       <div className="section">
         {education.map((entry, i) => {
@@ -37,7 +40,7 @@ export default function Education() {
               </h2>
               {entry.location && <p className="role-location" style={{ marginBottom: entry.group ? '0.75rem' : '0.25rem' }}>{entry.location}</p>}
               {entry.group ? (
-                entry.programs.map((program) => <ProgramBlock program={program} key={program.degree} />)
+                entry.programs.map((program) => <ProgramBlock program={program} t={t} key={program.degree} />)
               ) : (
                 <>
                   <div className="role-header">
@@ -49,7 +52,7 @@ export default function Education() {
                   {entry.description && <p className="role-description">{entry.description}</p>}
                   {entry.skills?.length > 0 && (
                     <p className="role-skills">
-                      <span className="label">skills:</span> {entry.skills.join(', ')}
+                      <span className="label">{t('skillsLabel')}</span> {entry.skills.join(', ')}
                     </p>
                   )}
                 </>

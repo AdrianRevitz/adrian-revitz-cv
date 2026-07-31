@@ -1,20 +1,26 @@
 import { Link } from 'react-router-dom'
-import { profile, skills, experience, education } from '../data/cv.js'
 import Reveal from '../components/Reveal.jsx'
+import Terminal from '../components/Terminal.jsx'
+import NeofetchCard from '../components/NeofetchCard.jsx'
 import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'Føtex']
 const HOME_HIDDEN_SCHOOLS = ['Nørre Gymnasium']
 
 function isCurrent(entry) {
-  return entry.group ? entry.roles.some((role) => role.period.includes('Present')) : entry.period.includes('Present')
+  const check = (period) => period.includes('Present') || period.includes('Nu')
+  return entry.group ? entry.roles.some((role) => check(role.period)) : check(entry.period)
 }
 
 export default function Home() {
+  const { cv, t } = useLanguage()
+  const { profile, skills, experience, education } = cv
+
   return (
     <>
       <section>
-        <p className="hero-eyebrow">whoami</p>
+        <p className="hero-eyebrow">{t('eyebrowWhoami')}</p>
         <h1 className="hero-name">{profile.shortName}</h1>
         <p className="hero-title">{profile.title}</p>
         <p className="hero-about">{profile.about}</p>
@@ -27,16 +33,25 @@ export default function Home() {
 
         <div className="hero-actions">
           <a className="btn btn-primary" href={`mailto:${profile.email}`}>
-            Get in touch
+            {t('btnGetInTouch')}
           </a>
           <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn ↗
+            {t('btnLinkedIn')}
           </a>
         </div>
       </section>
 
+      <Reveal as="section" className="section">
+        <Terminal />
+      </Reveal>
+
+      <Reveal as="section" className="section">
+        <h2 className="section-heading">{t('headingSystemInfo')}</h2>
+        <NeofetchCard />
+      </Reveal>
+
       <section className="section">
-        <h2 className="section-heading">Experience</h2>
+        <h2 className="section-heading">{t('headingExperience')}</h2>
         <Timeline>
           {experience
             .filter((entry) => !HOME_HIDDEN_COMPANIES.includes(entry.company))
@@ -80,62 +95,62 @@ export default function Home() {
             ))}
           <TimelineMore delay={300}>
             <Link className="btn" to="/experience">
-              Read full experience ↗
+              {t('btnReadFullExperience')}
             </Link>
           </TimelineMore>
         </Timeline>
       </section>
 
       <section className="section">
-        <h2 className="section-heading">Education</h2>
+        <h2 className="section-heading">{t('headingEducation')}</h2>
         <Timeline>
           {education
             .filter((entry) => !HOME_HIDDEN_SCHOOLS.includes(entry.school))
             .map((entry, i) => {
-            const current = entry.group
-              ? entry.programs.some((program) => program.status === 'current')
-              : entry.status === 'current'
-            return (
-              <TimelineItem badge={entry.badge} current={current} delay={Math.min(i * 60, 300)} key={entry.school}>
-                <h3 className="timeline-title" style={{ marginBottom: entry.group ? '0.5rem' : 0 }}>
-                  {entry.school}
-                </h3>
-                {entry.group ? (
-                  entry.programs.map((program) => (
-                    <div className="timeline-program" key={program.degree}>
+              const current = entry.group
+                ? entry.programs.some((program) => program.status === 'current')
+                : entry.status === 'current'
+              return (
+                <TimelineItem badge={entry.badge} current={current} delay={Math.min(i * 60, 300)} key={entry.school}>
+                  <h3 className="timeline-title" style={{ marginBottom: entry.group ? '0.5rem' : 0 }}>
+                    {entry.school}
+                  </h3>
+                  {entry.group ? (
+                    entry.programs.map((program) => (
+                      <div className="timeline-program" key={program.degree}>
+                        <div className="timeline-heading">
+                          <p className="timeline-degree" style={{ margin: 0 }}>
+                            {program.degree}
+                          </p>
+                          <span className="timeline-period">{program.period}</span>
+                        </div>
+                        {program.description && <p className="timeline-note">{program.description}</p>}
+                      </div>
+                    ))
+                  ) : (
+                    <>
                       <div className="timeline-heading">
                         <p className="timeline-degree" style={{ margin: 0 }}>
-                          {program.degree}
+                          {entry.degree}
                         </p>
-                        <span className="timeline-period">{program.period}</span>
+                        <span className="timeline-period">{entry.period}</span>
                       </div>
-                      {program.description && <p className="timeline-note">{program.description}</p>}
-                    </div>
-                  ))
-                ) : (
-                  <>
-                    <div className="timeline-heading">
-                      <p className="timeline-degree" style={{ margin: 0 }}>
-                        {entry.degree}
-                      </p>
-                      <span className="timeline-period">{entry.period}</span>
-                    </div>
-                    {entry.description && <p className="timeline-note">{entry.description}</p>}
-                  </>
-                )}
-              </TimelineItem>
-            )
-          })}
+                      {entry.description && <p className="timeline-note">{entry.description}</p>}
+                    </>
+                  )}
+                </TimelineItem>
+              )
+            })}
           <TimelineMore delay={300}>
             <Link className="btn" to="/education">
-              Read full education ↗
+              {t('btnReadFullEducation')}
             </Link>
           </TimelineMore>
         </Timeline>
       </section>
 
       <Reveal as="section" className="section">
-        <h2 className="section-heading">Skills</h2>
+        <h2 className="section-heading">{t('headingSkills')}</h2>
         <div className="skills-grid">
           {skills.map((skill, i) => (
             <span className="skill-pill reveal" style={{ transitionDelay: `${i * 25}ms` }} key={skill}>

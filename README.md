@@ -31,7 +31,4 @@ static host (Netlify, Vercel, GitHub Pages, etc.).
 - `src/components/` — shared Nav and Footer.
 - `src/index.css` — the dark tech theme.
 
-## To do before publishing
 
-- Replace the placeholder LinkedIn URL in `src/data/cv.js` (`profile.linkedin`)
-  with your real profile link.

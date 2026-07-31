@@ -1,18 +1,12 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle.jsx'
-
-const links = [
-  { to: '/', label: 'home' },
-  { to: '/experience', label: 'experience' },
-  { to: '/education', label: 'education' },
-  { to: '/photography', label: 'photography' },
-  { to: '/music', label: 'music' },
-  { to: '/contact', label: 'contact' },
-]
+import LanguageToggle from './LanguageToggle.jsx'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4)
@@ -20,6 +14,15 @@ export default function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  const links = [
+    { to: '/', label: t('navHome') },
+    { to: '/experience', label: t('navExperience') },
+    { to: '/education', label: t('navEducation') },
+    { to: '/photography', label: t('navPhotography') },
+    { to: '/music', label: t('navMusic') },
+    { to: '/contact', label: t('navContact') },
+  ]
 
   return (
     <nav className={`nav ${scrolled ? 'nav-scrolled' : ''}`}>
@@ -39,6 +42,7 @@ export default function Nav() {
             </NavLink>
           ))}
         </div>
+        <LanguageToggle />
         <ThemeToggle />
       </div>
     </nav>
