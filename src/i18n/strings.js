@@ -37,12 +37,7 @@ export const strings = {
     photographyIntro: 'A selection of shots — this gallery is being curated.',
     photographyNote: 'photos coming soon.',
 
-    musicIntro: 'Tracks and playlists — this section is being curated.',
-    musicNote: 'tracks coming soon.',
-    untitledTrack: 'Untitled track',
-    nowPlaying: 'Now playing',
-    notPlaying: 'Not playing right now',
-    spotifyDemoNote: 'demo data — live Spotify integration coming soon.',
+    musicIntro: "Some of the music I make, straight from Spotify.",
 
     footerBuiltWith: 'Built with React + Vite',
 
@@ -105,12 +100,7 @@ export const strings = {
     photographyIntro: 'Et udvalg af billeder — dette galleri er under opbygning.',
     photographyNote: 'billeder kommer snart.',
 
-    musicIntro: 'Numre og playlister — denne sektion er under opbygning.',
-    musicNote: 'numre kommer snart.',
-    untitledTrack: 'Unavngivet nummer',
-    nowPlaying: 'Spiller nu',
-    notPlaying: 'Spiller ikke lige nu',
-    spotifyDemoNote: 'demodata — live Spotify-integration kommer snart.',
+    musicIntro: 'Noget af den musik, jeg laver, direkte fra Spotify.',
 
     footerBuiltWith: 'Bygget med React + Vite',
 
