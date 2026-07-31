@@ -1,5 +1,6 @@
 export const profile = {
   name: 'Adrian Wehmüller Revitz',
+  shortName: 'Adrian W. Revitz',
   title: 'IT Operations & Business Informatics',
   tagline: 'Bridging business, data, and technology.',
   location: 'Copenhagen, Denmark',

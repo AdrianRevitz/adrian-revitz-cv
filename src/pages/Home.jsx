@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <section>
         <p className="hero-eyebrow">whoami</p>
-        <h1 className="hero-name">{profile.name}</h1>
+        <h1 className="hero-name">{profile.shortName}</h1>
         <p className="hero-title">{profile.title}</p>
         <p className="hero-about">{profile.about}</p>
 
