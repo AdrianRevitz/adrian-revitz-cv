@@ -34,15 +34,27 @@ export const strings = {
     labelLinkedIn: 'LinkedIn',
     viewProfile: 'View profile ↗',
 
-    photographyIntro: 'A selection of shots — this gallery is being curated.',
-    photographyNote: 'photos coming soon.',
+    tripKicker: 'exchange semester · sep–oct 2025',
+    tripTitle: 'Hong Kong & East Asia',
+    tripCopy:
+      'Shots from my exchange semester at City University of Hong Kong, taken while traveling around East Asia.',
+    tripPhotosLabel: 'photos',
+
+    photoLabelDate: 'Date',
+    photoLabelCamera: 'Camera',
+    photoLabelLens: 'Lens',
+    photoLabelAperture: 'Aperture',
+    photoLabelShutter: 'Shutter',
+    photoLabelFocalLength: 'Focal length',
+    photoClose: 'Close',
+    photoPrev: 'Previous photo',
+    photoNext: 'Next photo',
 
     musicIntro: "Some of the music I make, straight from Spotify.",
 
     footerBuiltWith: 'Built with React + Vite',
 
     skillsLabel: 'skills:',
-    noteLabel: 'note:',
 
     terminalWelcome: "Welcome! Type 'help' to see available commands.",
     terminalHelpIntro: 'Available commands:',
@@ -97,15 +109,27 @@ export const strings = {
     labelLinkedIn: 'LinkedIn',
     viewProfile: 'Se profil ↗',
 
-    photographyIntro: 'Et udvalg af billeder — dette galleri er under opbygning.',
-    photographyNote: 'billeder kommer snart.',
+    tripKicker: 'udvekslingssemester · sep-okt 2025',
+    tripTitle: 'Hong Kong & Østasien',
+    tripCopy:
+      'Billeder fra mit udvekslingssemester på City University of Hong Kong, taget mens jeg rejste rundt i Østasien.',
+    tripPhotosLabel: 'billeder',
+
+    photoLabelDate: 'Dato',
+    photoLabelCamera: 'Kamera',
+    photoLabelLens: 'Objektiv',
+    photoLabelAperture: 'Blænde',
+    photoLabelShutter: 'Lukkertid',
+    photoLabelFocalLength: 'Brændvidde',
+    photoClose: 'Luk',
+    photoPrev: 'Forrige billede',
+    photoNext: 'Næste billede',
 
     musicIntro: 'Noget af den musik, jeg laver, direkte fra Spotify.',
 
     footerBuiltWith: 'Bygget med React + Vite',
 
     skillsLabel: 'kompetencer:',
-    noteLabel: 'note:',
 
     terminalWelcome: "Velkommen! Skriv 'help' for at se de tilgængelige kommandoer.",
     terminalHelpIntro: 'Tilgængelige kommandoer:',
