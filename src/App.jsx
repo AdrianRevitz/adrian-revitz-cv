@@ -7,8 +7,13 @@ import Education from './pages/Education.jsx'
 import Photography from './pages/Photography.jsx'
 import Music from './pages/Music.jsx'
 import Contact from './pages/Contact.jsx'
+import { useLanguage } from './i18n/LanguageContext.jsx'
+import { useSeo } from './hooks/useSeo.js'
 
 export default function App() {
+  const { lang } = useLanguage()
+  useSeo(lang)
+
   return (
     <div className="app-shell">
       <Nav />

@@ -5,12 +5,21 @@ import App from './App.jsx'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const rootEl = document.getElementById('root')
+const app = (
   <React.StrictMode>
     <BrowserRouter>
       <LanguageProvider>
         <App />
       </LanguageProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+if (rootEl.hasChildNodes()) {
+  // Prerendered production build: hydrate the existing server-rendered markup.
+  ReactDOM.hydrateRoot(rootEl, app)
+} else {
+  // Dev server: no prerendered markup yet, mount fresh.
+  ReactDOM.createRoot(rootEl).render(app)
+}

@@ -45,7 +45,11 @@ export default function PhotoLightbox({ photos, index, onClose, onNav, t, lang }
         ‹
       </button>
       <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-        <img src={photo.full} alt="" className="lightbox-image" />
+        <img
+          src={photo.full}
+          alt={t('photoAlt')(index + 1, photos.length, formatPhotoDate(photo.date, lang))}
+          className="lightbox-image"
+        />
         <div className="lightbox-meta">
           {fields.map((f) => (
             <div className="lightbox-meta-item" key={f.label}>

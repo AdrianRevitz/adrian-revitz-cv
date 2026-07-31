@@ -52,7 +52,13 @@ export default function Photography() {
             onClick={() => setActiveIndex(i)}
             key={photo.id}
           >
-            <img src={photo.thumb} loading="lazy" width={photo.width} height={photo.height} alt="" />
+            <img
+              src={photo.thumb}
+              loading="lazy"
+              width={photo.width}
+              height={photo.height}
+              alt={t('photoAlt')(i + 1, photos.length, formatPhotoDate(photo.date, lang))}
+            />
             <div className="photo-caption">
               <span>{formatPhotoDate(photo.date, lang)}</span>
               <span className="photo-caption-settings">
