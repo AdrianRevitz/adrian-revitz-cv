@@ -187,7 +187,7 @@ export const education = [
     badge: 'CityU',
     location: 'Hong Kong S.A.R, China',
     degree: 'Exchange Semester, Business Administration and Management, General',
-    period: 'Aug 2025 – Dec 2025',
+    period: 'Aug 2025 – Jan 2026',
     status: 'completed',
     description:
       'Exchange semester in Hong Kong. Completed coursework in Business Intelligence and Analytics, Operations Management, and Information Management, with a focus on data-driven decision-making and organizational processes.',

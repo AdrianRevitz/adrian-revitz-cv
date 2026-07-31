@@ -187,7 +187,7 @@ export const education = [
     badge: 'CityU',
     location: 'Hongkong S.A.R., Kina',
     degree: 'Udvekslingssemester, Business Administration and Management, Generelt',
-    period: 'Aug 2025 – Dec 2025',
+    period: 'Aug 2025 – Jan 2026',
     status: 'completed',
     description:
       'Udvekslingssemester i Hongkong. Gennemførte fag inden for Business Intelligence and Analytics, Operations Management og Information Management med fokus på datadreven beslutningstagning og organisatoriske processer.',

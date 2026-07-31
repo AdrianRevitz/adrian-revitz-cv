@@ -34,7 +34,7 @@ export const strings = {
     labelLinkedIn: 'LinkedIn',
     viewProfile: 'View profile ↗',
 
-    tripKicker: 'exchange semester · sep–oct 2025',
+    tripKicker: 'exchange semester · aug 2025 – jan 2026',
     tripTitle: 'Hong Kong & East Asia',
     tripCopy:
       'Shots from my exchange semester at City University of Hong Kong, taken while traveling around East Asia.',
@@ -109,7 +109,7 @@ export const strings = {
     labelLinkedIn: 'LinkedIn',
     viewProfile: 'Se profil ↗',
 
-    tripKicker: 'udvekslingssemester · sep-okt 2025',
+    tripKicker: 'udvekslingssemester · aug 2025 – jan 2026',
     tripTitle: 'Hong Kong & Østasien',
     tripCopy:
       'Billeder fra mit udvekslingssemester på City University of Hong Kong, taget mens jeg rejste rundt i Østasien.',
