@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import ThemeToggle from './ThemeToggle.jsx'
 
 const links = [
   { to: '/', label: 'home' },
@@ -25,17 +26,20 @@ export default function Nav() {
       <div className="nav-brand">
         <span className="prompt">~/</span>adrian-revitz
       </div>
-      <div className="nav-links">
-        {links.map((link) => (
-          <NavLink
-            key={link.to}
-            to={link.to}
-            end
-            className={({ isActive }) => (isActive ? 'active' : undefined)}
-          >
-            {link.label}
-          </NavLink>
-        ))}
+      <div className="nav-right">
+        <div className="nav-links">
+          {links.map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end
+              className={({ isActive }) => (isActive ? 'active' : undefined)}
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+        <ThemeToggle />
       </div>
     </nav>
   )

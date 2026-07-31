@@ -1,4 +1,16 @@
 :root {
+  --bg: #ffffff;
+  --bg-elevated: #f4f6f8;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-dim: #64748b;
+  --accent: #0d9488;
+  --accent-dim: #0d948822;
+  --mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+:root[data-theme='dark'] {
   --bg: #0a0e14;
   --bg-elevated: #10151d;
   --border: #1e2833;
@@ -6,8 +18,6 @@
   --text-dim: #7b8899;
   --accent: #5eead4;
   --accent-dim: #2dd4bf33;
-  --mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 * {
@@ -28,6 +38,7 @@ body {
   color: var(--text);
   font-family: var(--sans);
   line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
   background-image:
     radial-gradient(ellipse 900px 500px at 12% -5%, #5eead41c 0%, transparent 55%),
     radial-gradient(ellipse 700px 500px at 88% 15%, #5eead411 0%, transparent 55%),
@@ -187,6 +198,13 @@ button:focus-visible,
   transition: color 0.15s ease;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -210,6 +228,33 @@ button:focus-visible,
 .nav-links a.active {
   color: var(--accent);
   border-bottom-color: var(--accent);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  padding: 0;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-dim);
+  transform: translateY(-2px);
 }
 
 /* ---------- Hero ---------- */

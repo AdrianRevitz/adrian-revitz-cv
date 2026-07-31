@@ -3,7 +3,8 @@ import { profile, skills, experience, education } from '../data/cv.js'
 import Reveal from '../components/Reveal.jsx'
 import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx'
 
-const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'føtex, Salling Group']
+const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'Føtex']
+const HOME_HIDDEN_SCHOOLS = ['Nørre Gymnasium']
 
 function isCurrent(entry) {
   return entry.group ? entry.roles.some((role) => role.period.includes('Present')) : entry.period.includes('Present')
@@ -88,7 +89,9 @@ export default function Home() {
       <section className="section">
         <h2 className="section-heading">Education</h2>
         <Timeline>
-          {education.map((entry, i) => {
+          {education
+            .filter((entry) => !HOME_HIDDEN_SCHOOLS.includes(entry.school))
+            .map((entry, i) => {
             const current = entry.group
               ? entry.programs.some((program) => program.status === 'current')
               : entry.status === 'current'
@@ -123,6 +126,11 @@ export default function Home() {
               </TimelineItem>
             )
           })}
+          <TimelineMore delay={300}>
+            <Link className="btn" to="/education">
+              Read full education ↗
+            </Link>
+          </TimelineMore>
         </Timeline>
       </section>
 
