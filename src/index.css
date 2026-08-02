@@ -194,14 +194,17 @@ button:focus-visible,
   font-family: var(--mono);
   font-size: 1rem;
   color: var(--text);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.nav-brand:hover {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .nav-brand .prompt {
   color: var(--accent);
-}
-
-.nav-brand {
-  transition: color 0.15s ease;
 }
 
 .nav-right {

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import ThemeToggle from './ThemeToggle.jsx'
 import LanguageToggle from './LanguageToggle.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
@@ -63,9 +63,9 @@ export default function Nav() {
 
   return (
     <nav ref={navRef} className={`nav ${scrolled ? 'nav-scrolled' : ''} ${menuOpen ? 'nav-menu-open' : ''}`}>
-      <div className="nav-brand">
+      <Link to="/" className="nav-brand">
         <span className="prompt">~/</span>adrian-revitz
-      </div>
+      </Link>
       <div className="nav-right">
         <div className="nav-links" id="nav-links">
           {links.map((link) => (
