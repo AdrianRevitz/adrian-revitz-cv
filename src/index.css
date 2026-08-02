@@ -198,9 +198,11 @@ button:focus-visible,
   transition: color 0.15s ease;
 }
 
-.nav-brand:hover {
-  color: var(--accent);
-  text-decoration: none;
+@media (hover: hover) {
+  .nav-brand:hover {
+    color: var(--accent);
+    text-decoration: none;
+  }
 }
 
 .nav-brand .prompt {

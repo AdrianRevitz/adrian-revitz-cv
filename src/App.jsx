@@ -9,10 +9,12 @@ import Music from './pages/Music.jsx'
 import Contact from './pages/Contact.jsx'
 import { useLanguage } from './i18n/LanguageContext.jsx'
 import { useSeo } from './hooks/useSeo.js'
+import { useScrollToTop } from './hooks/useScrollToTop.js'
 
 export default function App() {
   const { lang } = useLanguage()
   useSeo(lang)
+  useScrollToTop()
 
   return (
     <div className="app-shell">
