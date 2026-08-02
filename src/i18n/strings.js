@@ -6,6 +6,8 @@ export const strings = {
     navPhotography: 'photography',
     navMusic: 'music',
     navContact: 'contact',
+    navMenuOpen: 'Open menu',
+    navMenuClose: 'Close menu',
 
     eyebrowWhoami: 'whoami',
     eyebrowCareerLog: 'career log',
@@ -82,6 +84,8 @@ export const strings = {
     navPhotography: 'fotografi',
     navMusic: 'musik',
     navContact: 'kontakt',
+    navMenuOpen: 'Åbn menu',
+    navMenuClose: 'Luk menu',
 
     eyebrowWhoami: 'whoami',
     eyebrowCareerLog: 'karriere-log',
