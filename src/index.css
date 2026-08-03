@@ -491,6 +491,16 @@ button:focus-visible,
   box-shadow: 0 6px 24px -6px #2dd4bf66;
 }
 
+.btn-icon {
+  padding: 0.6rem;
+  justify-content: center;
+}
+
+.btn-icon svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
 /* ---------- Terminal ---------- */
 
 .terminal-window {

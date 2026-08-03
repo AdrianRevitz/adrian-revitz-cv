@@ -8,6 +8,8 @@ export const profile = {
   email: 'adrian.revitz@gmail.com',
   phone: '+45 50481906',
   linkedin: 'https://www.linkedin.com/in/adrianrevitz/',
+  instagram: 'https://www.instagram.com/adrianrevitz/',
+  facebook: 'https://www.facebook.com/adrian.revitz/',
   about: `Kandidatstuderende i Digital Innovation & Management på IT-Universitetet
     i København, arbejder i øjeblikket som Junioranalytiker hos Pinetree Venture
     Partners og som studentermedhjælper hos Semler IT. Har en bachelorgrad i
