@@ -32,9 +32,9 @@ export default function Home() {
         </div>
 
         <div className="hero-actions">
-          <a className="btn btn-primary" href={`mailto:${profile.email}`}>
+          <Link className="btn btn-primary" to="/contact">
             {t('btnGetInTouch')}
-          </a>
+          </Link>
           <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
             {t('btnLinkedIn')}
           </a>
