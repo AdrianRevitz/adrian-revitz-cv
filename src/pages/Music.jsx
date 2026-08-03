@@ -1,7 +1,6 @@
 import Reveal from '../components/Reveal.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
-
-const SPOTIFY_ARTIST_ID = '4Vid8SCRubn0xYbDIPQwTd'
+import { SPOTIFY_ARTIST_ID } from '../data/music.js'
 
 export default function Music() {
   const { t } = useLanguage()

@@ -3,7 +3,10 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { LanguageProvider } from './i18n/LanguageContext.jsx'
+import { registerWebMcpTools } from './webmcp.js'
 import './index.css'
+
+registerWebMcpTools()
 
 const rootEl = document.getElementById('root')
 const app = (
