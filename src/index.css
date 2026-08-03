@@ -1004,20 +1004,27 @@ button:focus-visible,
   border-top: 1px dashed var(--border);
 }
 
-.timeline-badge-more {
-  color: var(--text-dim);
-  font-size: 1.1rem;
-}
-
-.timeline-item-more .timeline-content {
-  display: flex;
+.timeline-more-link {
+  display: inline-flex;
   align-items: center;
-  min-height: 3.25rem;
+  width: fit-content;
+  height: 3.25rem;
+  padding: 0 1.1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-elevated);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
 
-.timeline-item-more .btn {
-  height: 3.25rem;
-  background: var(--bg-elevated);
+.timeline-more-link:hover {
+  border-color: var(--accent);
+  background: var(--accent-dim);
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
 /* ---------- Photography ---------- */

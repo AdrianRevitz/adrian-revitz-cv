@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Reveal from './Reveal.jsx'
 
 export function Timeline({ children }) {
@@ -13,11 +14,12 @@ export function TimelineItem({ badge, current = false, delay = 0, children }) {
   )
 }
 
-export function TimelineMore({ delay = 0, children }) {
+export function TimelineMore({ to, delay = 0, children }) {
   return (
     <Reveal className="timeline-item timeline-item-more" delay={delay}>
-      <div className="timeline-badge timeline-badge-more">⋯</div>
-      <div className="timeline-content">{children}</div>
+      <Link to={to} className="timeline-more-link">
+        {children}
+      </Link>
     </Reveal>
   )
 }

@@ -96,10 +96,8 @@ export default function Home() {
                 )}
               </TimelineItem>
             ))}
-          <TimelineMore delay={300}>
-            <Link className="btn" to="/experience">
-              {t('btnReadFullExperience')}
-            </Link>
+          <TimelineMore to="/experience" delay={300}>
+            {t('btnReadFullExperience')}
           </TimelineMore>
         </Timeline>
       </section>
@@ -145,10 +143,8 @@ export default function Home() {
                 </TimelineItem>
               )
             })}
-          <TimelineMore delay={300}>
-            <Link className="btn" to="/education">
-              {t('btnReadFullEducation')}
-            </Link>
+          <TimelineMore to="/education" delay={300}>
+            {t('btnReadFullEducation')}
           </TimelineMore>
         </Timeline>
       </section>
