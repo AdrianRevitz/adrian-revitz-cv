@@ -1015,6 +1015,11 @@ button:focus-visible,
   min-height: 3.25rem;
 }
 
+.timeline-item-more .btn {
+  height: 3.25rem;
+  background: var(--bg-elevated);
+}
+
 /* ---------- Photography ---------- */
 
 .trip-banner {
