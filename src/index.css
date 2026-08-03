@@ -1005,9 +1005,7 @@ button:focus-visible,
 }
 
 .timeline-badge-more {
-  border-style: dashed;
   color: var(--text-dim);
-  background: transparent;
   font-size: 1.1rem;
 }
 
