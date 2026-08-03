@@ -95,6 +95,7 @@ export const experience = [
   {
     company: 'Dansk Sundhedsteam',
     badge: 'DST',
+    logo: '/logos/dst.png',
     role: 'Web Developer',
     employment: 'Freelance',
     period: 'Feb 2024 – Jul 2024',
@@ -107,6 +108,7 @@ export const experience = [
   {
     company: 'Danish Patient Safety Authority',
     badge: 'DPSA',
+    logo: '/logos/dpsa.png',
     role: 'Contact Tracing',
     employment: 'Full-time',
     period: 'Dec 2020 – Jan 2022',
@@ -120,6 +122,7 @@ export const experience = [
   {
     company: 'Coop Denmark',
     badge: 'COOP',
+    logo: '/logos/coop.png',
     group: true,
     groupNote: 'Part-time · 2 yrs 3 mos. total',
     roles: [
@@ -148,6 +151,7 @@ export const experience = [
   {
     company: 'Føtex',
     badge: 'FTX',
+    logo: '/logos/foetex.png',
     role: 'Young Worker',
     employment: 'Part-time',
     period: 'Sep 2016 – Aug 2017',
@@ -163,6 +167,7 @@ export const education = [
   {
     school: 'IT University of Copenhagen',
     badge: 'ITU',
+    logo: '/logos/itu.png',
     location: 'Copenhagen, Denmark',
     group: true,
     programs: [
@@ -187,6 +192,7 @@ export const education = [
   {
     school: 'City University of Hong Kong',
     badge: 'CityU',
+    logo: '/logos/cityu.png',
     location: 'Hong Kong S.A.R, China',
     degree: 'Exchange Semester, Business Administration and Management, General',
     period: 'Aug 2025 – Jan 2026',
@@ -198,6 +204,7 @@ export const education = [
   {
     school: 'Nørre Gymnasium',
     badge: 'NG',
+    logo: '/logos/norreg.png',
     location: 'Copenhagen, Denmark',
     degree: 'Upper Secondary School Diploma — Social Studies A, Mathematics A, Media Studies B',
     period: '2017 – 2020',

@@ -109,6 +109,7 @@ export default function Home() {
               return (
                 <TimelineItem badge={entry.badge} current={current} delay={Math.min(i * 60, 300)} key={entry.school}>
                   <h3 className="timeline-title" style={{ marginBottom: entry.group ? '0.5rem' : 0 }}>
+                    {entry.logo && <img src={entry.logo} alt="" className="company-logo" />}
                     {entry.school}
                   </h3>
                   {entry.group ? (
