@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal.jsx'
 import Terminal from '../components/Terminal.jsx'
 import NeofetchCard from '../components/NeofetchCard.jsx'
 import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx'
-import { InstagramIcon, FacebookIcon } from '../components/SocialIcons.jsx'
+import { InstagramIcon, FacebookIcon, LinkedInIcon } from '../components/SocialIcons.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'Føtex']
@@ -42,8 +42,8 @@ export default function Home() {
           <a className="btn btn-icon" href={profile.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
             <FacebookIcon />
           </a>
-          <a className="btn" href={profile.linkedin} target="_blank" rel="noreferrer">
-            {t('btnLinkedIn')}
+          <a className="btn btn-icon" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <LinkedInIcon />
           </a>
         </div>
       </section>

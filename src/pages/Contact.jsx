@@ -28,6 +28,14 @@ export default function Contact() {
           <p className="label">{t('labelLinkedIn')}</p>
           <p className="value">{t('viewProfile')}</p>
         </Reveal>
+        <Reveal as="a" className="contact-card" delay={240} href={profile.instagram} target="_blank" rel="noreferrer">
+          <p className="label">{t('labelInstagram')}</p>
+          <p className="value">{profile.instagramHandle}</p>
+        </Reveal>
+        <Reveal as="a" className="contact-card" delay={300} href={profile.facebook} target="_blank" rel="noreferrer">
+          <p className="label">{t('labelFacebook')}</p>
+          <p className="value">{profile.facebookHandle}</p>
+        </Reveal>
       </div>
     </section>
   )

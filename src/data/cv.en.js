@@ -9,7 +9,9 @@ export const profile = {
   phone: '+45 50481906',
   linkedin: 'https://www.linkedin.com/in/adrianrevitz/',
   instagram: 'https://www.instagram.com/adrianrevitz/',
+  instagramHandle: '@adrianrevitz',
   facebook: 'https://www.facebook.com/adrian.revitz/',
+  facebookHandle: '@adrian.revitz',
   about: `Master's student in Digital Innovation & Management at the IT University
     of Copenhagen, currently working as a Junior Analyst at Pinetree Venture
     Partners and as a Student Assistant at Semler IT. Holds a Bachelor's degree

@@ -25,15 +25,16 @@ export const strings = {
     headingSystemInfo: 'System Info',
 
     btnGetInTouch: 'Get in touch',
-    btnLinkedIn: 'LinkedIn ↗',
     btnReadFullExperience: 'Read full experience ↗',
     btnReadFullEducation: 'Read full education ↗',
 
-    contactIntro: 'Feel free to reach out via email or phone, or connect on LinkedIn.',
+    contactIntro: 'Feel free to reach out via email or phone, or connect on social media.',
     labelEmail: 'Email',
     labelPhone: 'Phone',
     labelLocation: 'Location',
     labelLinkedIn: 'LinkedIn',
+    labelInstagram: 'Instagram',
+    labelFacebook: 'Facebook',
     viewProfile: 'View profile ↗',
 
     tripKicker: 'exchange semester · aug 2025 – jan 2026',
@@ -103,15 +104,16 @@ export const strings = {
     headingSystemInfo: 'Systeminfo',
 
     btnGetInTouch: 'Kontakt mig',
-    btnLinkedIn: 'LinkedIn ↗',
     btnReadFullExperience: 'Se fuld erfaring ↗',
     btnReadFullEducation: 'Se fuld uddannelse ↗',
 
-    contactIntro: 'Du er velkommen til at kontakte mig via e-mail eller telefon, eller connecte på LinkedIn.',
+    contactIntro: 'Du er velkommen til at kontakte mig via e-mail eller telefon, eller connecte på sociale medier.',
     labelEmail: 'E-mail',
     labelPhone: 'Telefon',
     labelLocation: 'Placering',
     labelLinkedIn: 'LinkedIn',
+    labelInstagram: 'Instagram',
+    labelFacebook: 'Facebook',
     viewProfile: 'Se profil ↗',
 
     tripKicker: 'udvekslingssemester · aug 2025 – jan 2026',
