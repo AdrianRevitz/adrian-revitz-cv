@@ -38,6 +38,7 @@ export const experience = [
   {
     company: 'Pinetree Venture Partners',
     badge: 'PVP',
+    logo: '/logos/pinetree.png',
     role: 'Junioranalytiker',
     employment: 'Deltid',
     period: 'Maj 2026 – Nu',
@@ -51,6 +52,7 @@ export const experience = [
   {
     company: 'Semler IT',
     badge: 'SI',
+    logo: '/logos/semler.png',
     group: true,
     groupNote: 'Semler Gruppen · 3 år 11 mdr. i alt',
     roles: [

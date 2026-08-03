@@ -38,6 +38,7 @@ export const experience = [
   {
     company: 'Pinetree Venture Partners',
     badge: 'PVP',
+    logo: '/logos/pinetree.png',
     role: 'Junior Analyst',
     employment: 'Part-time',
     period: 'May 2026 – Present',
@@ -51,6 +52,7 @@ export const experience = [
   {
     company: 'Semler IT',
     badge: 'SI',
+    logo: '/logos/semler.png',
     group: true,
     groupNote: 'Semler Gruppen · 3 yrs 11 mos. total',
     roles: [

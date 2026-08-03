@@ -43,6 +43,7 @@ export default function Experience() {
         {experience.map((entry, i) => (
           <Reveal className="card" delay={Math.min(i * 60, 300)} key={entry.company}>
             <h2 className="company-title" style={{ marginBottom: '0.25rem' }}>
+              {entry.logo && <img src={entry.logo} alt="" className="company-logo" />}
               {entry.company}
             </h2>
             {entry.groupNote && <p className="card-group-note">{entry.groupNote}</p>}

@@ -53,6 +53,7 @@ export default function Home() {
             .map((entry, i) => (
               <TimelineItem badge={entry.badge} current={isCurrent(entry)} delay={Math.min(i * 60, 300)} key={entry.company}>
                 <h3 className="timeline-title" style={{ marginBottom: entry.group ? '0.5rem' : 0 }}>
+                  {entry.logo && <img src={entry.logo} alt="" className="company-logo" />}
                   {entry.company}
                 </h3>
                 {entry.group ? (
