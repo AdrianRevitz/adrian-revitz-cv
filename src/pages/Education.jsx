@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal.jsx'
+import PageHeader from '../components/PageHeader.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 function ProgramBlock({ program, t }) {
@@ -25,8 +26,7 @@ export default function Education() {
 
   return (
     <section>
-      <p className="hero-eyebrow">{t('eyebrowBackground')}</p>
-      <h1 className="hero-name">{t('headingEducation')}</h1>
+      <PageHeader path={t('navEducation')} title={t('headingEducation')} />
 
       <div className="section">
         {education.map((entry, i) => {
