@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Reveal from '../components/Reveal.jsx'
 import Terminal from '../components/Terminal.jsx'
 import NeofetchCard from '../components/NeofetchCard.jsx'
 import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx'
@@ -19,45 +20,37 @@ export default function Home() {
 
   return (
     <>
-      <section className="hero">
+      <section>
+        <p className="hero-eyebrow">{t('eyebrowWhoami')}</p>
         <h1 className="hero-name">{profile.shortName}</h1>
         <p className="hero-title">{profile.title}</p>
         <p className="hero-about">{profile.about}</p>
 
-        <dl className="keyline">
-          <dt>{t('labelLocation')}</dt>
-          <dd>{profile.location}</dd>
-          <dt>{t('labelEmail')}</dt>
-          <dd>
-            <a href={`mailto:${profile.email}`}>{profile.email}</a>
-          </dd>
-          <dt>{t('labelPhone')}</dt>
-          <dd>
-            <a href={`tel:${profile.phone.replace(/\s+/g, '')}`}>{profile.phone}</a>
-          </dd>
-        </dl>
+        <div className="hero-meta">
+          <span>📍 {profile.location}</span>
+          <span>✉ {profile.email}</span>
+          <span>☎ {profile.phone}</span>
+        </div>
 
         <div className="hero-actions">
           <Link className="btn btn-primary" to="/contact">
             {t('btnGetInTouch')}
           </Link>
-          <a className="btn btn-icon" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
-            <LinkedInIcon />
-          </a>
           <a className="btn btn-icon" href={profile.instagram} target="_blank" rel="noreferrer" aria-label="Instagram">
             <InstagramIcon />
           </a>
           <a className="btn btn-icon" href={profile.facebook} target="_blank" rel="noreferrer" aria-label="Facebook">
             <FacebookIcon />
           </a>
+          <a className="btn btn-icon" href={profile.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+            <LinkedInIcon />
+          </a>
         </div>
       </section>
 
-      {/* The terminal closes the hero composition rather than opening a new
-          section, so it gets spacing but no rule or heading of its own. */}
-      <section style={{ marginTop: '3rem' }}>
+      <Reveal as="section" className="section">
         <Terminal />
-      </section>
+      </Reveal>
 
       <section className="section">
         <h2 className="section-heading">{t('headingExperience')}</h2>
@@ -76,7 +69,7 @@ export default function Home() {
                       <div className="timeline-heading">
                         <p className="timeline-subtitle" style={{ margin: 0 }}>
                           <span className="timeline-role">{role.role}</span>
-                          <span className="timeline-sep" />
+                          <span className="timeline-dot" />
                           {role.employment}
                         </p>
                         <span className="timeline-period">
@@ -91,7 +84,7 @@ export default function Home() {
                     <div className="timeline-heading">
                       <p className="timeline-subtitle" style={{ margin: 0 }}>
                         <span className="timeline-role">{entry.role}</span>
-                        <span className="timeline-sep" />
+                        <span className="timeline-dot" />
                         {entry.employment}
                       </p>
                       <span className="timeline-period">
@@ -156,24 +149,21 @@ export default function Home() {
         </Timeline>
       </section>
 
-      <section className="section">
+      <Reveal as="section" className="section">
         <h2 className="section-heading">{t('headingSystemInfo')}</h2>
         <NeofetchCard />
-      </section>
+      </Reveal>
 
-      <section className="section">
-        <h2 className="section-heading">
-          {t('headingSkills')}
-          <span className="section-heading-note">{skills.length}</span>
-        </h2>
+      <Reveal as="section" className="section">
+        <h2 className="section-heading">{t('headingSkills')}</h2>
         <div className="skills-grid">
-          {skills.map((skill) => (
-            <span className="skill-pill" key={skill}>
+          {skills.map((skill, i) => (
+            <span className="skill-pill reveal" style={{ transitionDelay: `${i * 25}ms` }} key={skill}>
               {skill}
             </span>
           ))}
         </div>
-      </section>
+      </Reveal>
     </>
   )
 }

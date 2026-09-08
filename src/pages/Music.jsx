@@ -1,4 +1,4 @@
-import PageHeader from '../components/PageHeader.jsx'
+import Reveal from '../components/Reveal.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { SPOTIFY_ARTIST_ID } from '../data/music.js'
 
@@ -7,9 +7,11 @@ export default function Music() {
 
   return (
     <section>
-      <PageHeader path={t('navMusic')} title={t('headingMusic')} intro={t('musicIntro')} />
+      <p className="hero-eyebrow">{t('eyebrowNowPlaying')}</p>
+      <h1 className="hero-name">{t('headingMusic')}</h1>
+      <p className="hero-about">{t('musicIntro')}</p>
 
-      <div className="spotify-embed section">
+      <Reveal as="div" className="spotify-embed section">
         <iframe
           title="Spotify artist profile"
           src={`https://open.spotify.com/embed/artist/${SPOTIFY_ARTIST_ID}?utm_source=generator`}
@@ -19,7 +21,7 @@ export default function Music() {
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
           loading="lazy"
         />
-      </div>
+      </Reveal>
     </section>
   )
 }

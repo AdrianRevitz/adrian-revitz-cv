@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Reveal from '../components/Reveal.jsx'
-import PageHeader from '../components/PageHeader.jsx'
 import PhotoLightbox from '../components/PhotoLightbox.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { photos } from '../data/photos.js'
@@ -25,9 +24,10 @@ export default function Photography() {
 
   return (
     <section>
-      <PageHeader path={t('navPhotography')} title={t('headingPhotography')} />
+      <p className="hero-eyebrow">{t('eyebrowGallery')}</p>
+      <h1 className="hero-name">{t('headingPhotography')}</h1>
 
-      <div className="trip-banner section">
+      <div className="trip-banner">
         <p className="trip-kicker">{t('tripKicker')}</p>
         <h2 className="trip-title">{t('tripTitle')}</h2>
         <p className="trip-copy">{t('tripCopy')}</p>
@@ -35,40 +35,38 @@ export default function Photography() {
           <span>
             {photos.length} {t('tripPhotosLabel')}
           </span>
+          <span className="trip-stat-dot" />
           <span>{photos[0].camera}</span>
+          <span className="trip-stat-dot" />
           <span>{tripDateRange(lang)}</span>
         </div>
       </div>
 
-      {/* The photographs are the content on this page, so the grid escapes the
-          text column. */}
-      <div className="gallery-bleed section">
-        <div className="photo-masonry">
-          {photos.map((photo, i) => (
-            <Reveal
-              as="button"
-              type="button"
-              className="photo-tile"
-              delay={Math.min(i * 40, 320)}
-              onClick={() => setActiveIndex(i)}
-              key={photo.id}
-            >
-              <img
-                src={photo.thumb}
-                loading="lazy"
-                width={photo.width}
-                height={photo.height}
-                alt={t('photoAlt')(i + 1, photos.length, formatPhotoDate(photo.date, lang))}
-              />
-              <span className="photo-caption">
-                <span>{formatPhotoDate(photo.date, lang)}</span>
-                <span className="photo-caption-settings">
-                  {formatAperture(photo.aperture)} {formatShutter(photo.shutter)} ISO {photo.iso}
-                </span>
+      <div className="photo-masonry section">
+        {photos.map((photo, i) => (
+          <Reveal
+            as="button"
+            type="button"
+            className="photo-tile"
+            delay={Math.min(i * 40, 320)}
+            onClick={() => setActiveIndex(i)}
+            key={photo.id}
+          >
+            <img
+              src={photo.thumb}
+              loading="lazy"
+              width={photo.width}
+              height={photo.height}
+              alt={t('photoAlt')(i + 1, photos.length, formatPhotoDate(photo.date, lang))}
+            />
+            <div className="photo-caption">
+              <span>{formatPhotoDate(photo.date, lang)}</span>
+              <span className="photo-caption-settings">
+                {formatAperture(photo.aperture)} · {formatShutter(photo.shutter)} · ISO {photo.iso}
               </span>
-            </Reveal>
-          ))}
-        </div>
+            </div>
+          </Reveal>
+        ))}
       </div>
 
       {activeIndex !== null && (

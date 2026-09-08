@@ -1,5 +1,4 @@
 import Reveal from '../components/Reveal.jsx'
-import PageHeader from '../components/PageHeader.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 function RoleBlock({ role, t }) {
@@ -37,7 +36,8 @@ export default function Experience() {
 
   return (
     <section>
-      <PageHeader path={t('navExperience')} title={t('headingExperience')} />
+      <p className="hero-eyebrow">{t('eyebrowCareerLog')}</p>
+      <h1 className="hero-name">{t('headingExperience')}</h1>
 
       <div className="section">
         {experience.map((entry, i) => (

@@ -9,6 +9,12 @@ export const strings = {
     navMenuOpen: 'Open menu',
     navMenuClose: 'Close menu',
 
+    eyebrowWhoami: 'whoami',
+    eyebrowCareerLog: 'career log',
+    eyebrowBackground: 'background',
+    eyebrowGallery: 'gallery',
+    eyebrowNowPlaying: 'now playing',
+    eyebrowReachOut: 'reach out',
 
     headingExperience: 'Experience',
     headingEducation: 'Education',
@@ -16,23 +22,22 @@ export const strings = {
     headingContact: 'Contact',
     headingPhotography: 'Photography',
     headingMusic: 'Music',
-    headingSystemInfo: 'System info',
+    headingSystemInfo: 'System Info',
 
     btnGetInTouch: 'Get in touch',
-    btnReadFullExperience: 'Read full experience',
-    btnReadFullEducation: 'Read full education',
+    btnReadFullExperience: 'Read full experience ↗',
+    btnReadFullEducation: 'Read full education ↗',
 
-    contactIntro: 'Email is the surest way to reach me. I answer within a day or two.',
-    labelElsewhere: 'Elsewhere',
+    contactIntro: 'Feel free to reach out via email or phone, or connect on social media.',
     labelEmail: 'Email',
     labelPhone: 'Phone',
     labelLocation: 'Location',
     labelLinkedIn: 'LinkedIn',
     labelInstagram: 'Instagram',
     labelFacebook: 'Facebook',
-    viewProfile: 'Open LinkedIn',
+    viewProfile: 'View profile ↗',
 
-    tripKicker: 'Exchange semester, Aug 2025 – Jan 2026',
+    tripKicker: 'exchange semester · aug 2025 – jan 2026',
     tripTitle: 'Hong Kong & East Asia',
     tripCopy:
       'Shots from my exchange semester at City University of Hong Kong, taken while traveling around East Asia.',
@@ -55,7 +60,7 @@ export const strings = {
 
     skillsLabel: 'skills:',
 
-    terminalWelcome: 'Welcome. Type a command, or pick one of the suggestions.',
+    terminalWelcome: "Welcome! Type 'help' to see available commands.",
     terminalHelpIntro: 'Available commands:',
     terminalNotFound: (cmd) => `command not found: ${cmd} — type 'help' for a list of commands`,
     terminalCommands: {
@@ -72,7 +77,6 @@ export const strings = {
     terminalHireMe: 'Permission granted. Redirecting you to the contact page…',
     terminalContactInfo: (email, phone) => `Email: ${email}\nPhone: ${phone}`,
     terminalPlaceholder: 'Type a command…',
-    terminalInputLabel: 'Terminal input',
   },
   da: {
     navHome: 'hjem',
@@ -84,6 +88,12 @@ export const strings = {
     navMenuOpen: 'Åbn menu',
     navMenuClose: 'Luk menu',
 
+    eyebrowWhoami: 'whoami',
+    eyebrowCareerLog: 'karriere-log',
+    eyebrowBackground: 'baggrund',
+    eyebrowGallery: 'galleri',
+    eyebrowNowPlaying: 'spiller nu',
+    eyebrowReachOut: 'sig hej',
 
     headingExperience: 'Erfaring',
     headingEducation: 'Uddannelse',
@@ -94,20 +104,19 @@ export const strings = {
     headingSystemInfo: 'Systeminfo',
 
     btnGetInTouch: 'Kontakt mig',
-    btnReadFullExperience: 'Se fuld erfaring',
-    btnReadFullEducation: 'Se fuld uddannelse',
+    btnReadFullExperience: 'Se fuld erfaring ↗',
+    btnReadFullEducation: 'Se fuld uddannelse ↗',
 
-    contactIntro: 'E-mail er den sikreste vej til mig. Jeg svarer inden for en dag eller to.',
-    labelElsewhere: 'Andre steder',
+    contactIntro: 'Du er velkommen til at kontakte mig via e-mail eller telefon, eller connecte på sociale medier.',
     labelEmail: 'E-mail',
     labelPhone: 'Telefon',
     labelLocation: 'Placering',
     labelLinkedIn: 'LinkedIn',
     labelInstagram: 'Instagram',
     labelFacebook: 'Facebook',
-    viewProfile: 'Åbn LinkedIn',
+    viewProfile: 'Se profil ↗',
 
-    tripKicker: 'Udvekslingssemester, aug 2025 – jan 2026',
+    tripKicker: 'udvekslingssemester · aug 2025 – jan 2026',
     tripTitle: 'Hong Kong & Østasien',
     tripCopy:
       'Billeder fra mit udvekslingssemester på City University of Hong Kong, taget mens jeg rejste rundt i Østasien.',
@@ -130,7 +139,7 @@ export const strings = {
 
     skillsLabel: 'kompetencer:',
 
-    terminalWelcome: 'Velkommen. Skriv en kommando, eller vælg et af forslagene.',
+    terminalWelcome: "Velkommen! Skriv 'help' for at se de tilgængelige kommandoer.",
     terminalHelpIntro: 'Tilgængelige kommandoer:',
     terminalNotFound: (cmd) => `kommando ikke fundet: ${cmd} — skriv 'help' for en liste over kommandoer`,
     terminalCommands: {
@@ -147,7 +156,6 @@ export const strings = {
     terminalHireMe: 'Adgang givet. Omdirigerer til kontaktsiden…',
     terminalContactInfo: (email, phone) => `E-mail: ${email}\nTelefon: ${phone}`,
     terminalPlaceholder: 'Skriv en kommando…',
-    terminalInputLabel: 'Terminal-input',
   },
 }
 

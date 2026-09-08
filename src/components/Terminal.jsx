@@ -3,9 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { getNeofetchFields } from '../data/neofetch.js'
 
-// Command names stay in English whatever the UI language; only output is translated.
-const SUGGESTED = ['help', 'whoami', 'skills', 'neofetch', 'sudo hire-me']
-
 export default function Terminal() {
   const { cv, lang, t } = useLanguage()
   const navigate = useNavigate()
@@ -76,20 +73,15 @@ export default function Terminal() {
     setValue('')
   }
 
-  function runSuggested(cmd) {
-    handleCommand(cmd)
-    inputRef.current?.focus()
-  }
-
   return (
-    <div className="terminal-window">
+    <div className="terminal-window" onClick={() => inputRef.current?.focus()}>
       <div className="terminal-titlebar">
-        <span className="terminal-dot" />
-        <span className="terminal-dot" />
-        <span className="terminal-dot" />
+        <span className="terminal-dot terminal-dot-red" />
+        <span className="terminal-dot terminal-dot-yellow" />
+        <span className="terminal-dot terminal-dot-green" />
         <span className="terminal-titlebar-label">guest@adrian-revitz: ~</span>
       </div>
-      <div className="terminal-body" ref={bodyRef} onClick={() => inputRef.current?.focus()}>
+      <div className="terminal-body" ref={bodyRef}>
         {lines.map((line, i) => (
           <pre className={`terminal-line terminal-line-${line.type}`} key={i}>
             {line.type === 'input' ? `guest@adrian-revitz:~$ ${line.text}` : line.text}
@@ -105,16 +97,9 @@ export default function Terminal() {
             placeholder={t('terminalPlaceholder')}
             autoComplete="off"
             spellCheck={false}
-            aria-label={t('terminalInputLabel')}
+            aria-label="Terminal input"
           />
         </form>
-      </div>
-      <div className="terminal-chips">
-        {SUGGESTED.map((cmd) => (
-          <button type="button" className="terminal-chip" key={cmd} onClick={() => runSuggested(cmd)}>
-            {cmd}
-          </button>
-        ))}
       </div>
     </div>
   )

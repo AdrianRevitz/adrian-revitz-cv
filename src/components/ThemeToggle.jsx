@@ -27,10 +27,6 @@ export default function ThemeToggle() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
-    // Keep the browser chrome matching the page, which defaults to light
-    // whatever the OS prefers.
-    const meta = document.querySelector('meta[name="theme-color"]')
-    if (meta) meta.setAttribute('content', theme === 'dark' ? '#0a0e11' : '#f6f7f7')
     try {
       localStorage.setItem('theme', theme)
     } catch (e) {
