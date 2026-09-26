@@ -43,6 +43,10 @@ export default function Terminal() {
         print(lang === 'da' ? 'Åbner erfaring-siden…' : 'Opening the experience page…')
         navigate('/experience')
         break
+      case 'projects':
+        print(lang === 'da' ? 'Åbner projekt-siden…' : 'Opening the projects page…')
+        navigate('/projects')
+        break
       case 'education':
         print(lang === 'da' ? 'Åbner uddannelse-siden…' : 'Opening the education page…')
         navigate('/education')

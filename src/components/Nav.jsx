@@ -55,6 +55,7 @@ export default function Nav() {
   const links = [
     { to: '/', label: t('navHome') },
     { to: '/experience', label: t('navExperience') },
+    { to: '/projects', label: t('navProjects') },
     { to: '/education', label: t('navEducation') },
     { to: '/photography', label: t('navPhotography') },
     { to: '/music', label: t('navMusic') },

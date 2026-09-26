@@ -2,8 +2,9 @@ import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import * as cvEn from '../data/cv.en.js'
 import * as cvDa from '../data/cv.da.js'
 import { createTranslator } from './strings.js'
+import { withComputedDates } from '../utils/cvDates.js'
 
-const cvByLang = { en: cvEn, da: cvDa }
+const cvByLang = { en: withComputedDates(cvEn, 'en'), da: withComputedDates(cvDa, 'da') }
 
 const LanguageContext = createContext(null)
 

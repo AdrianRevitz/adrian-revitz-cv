@@ -47,6 +47,7 @@ export default function Experience() {
               {entry.company}
             </h2>
             {entry.groupNote && <p className="card-group-note">{entry.groupNote}</p>}
+            {entry.summary && <p className="role-description">{entry.summary}</p>}
             {entry.group
               ? entry.roles.map((role) => <RoleBlock role={role} t={t} key={role.role} />)
               : <RoleBlock role={entry} t={t} />}

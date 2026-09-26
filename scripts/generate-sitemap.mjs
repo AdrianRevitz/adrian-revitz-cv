@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 
 const SITE_URL = 'https://adrianrevitz.dk'
-const routes = ['/', '/experience', '/education', '/photography', '/music', '/contact']
+const routes = ['/', '/experience', '/projects', '/education', '/photography', '/music', '/contact']
 const today = process.env.SITEMAP_DATE || new Date().toISOString().slice(0, 10)
 
 const urls = routes

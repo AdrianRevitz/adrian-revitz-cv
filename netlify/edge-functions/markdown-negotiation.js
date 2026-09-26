@@ -5,6 +5,7 @@
 const ROUTE_TO_MARKDOWN_FILE = {
   '/': '/index.md',
   '/experience': '/experience.md',
+  '/projects': '/projects.md',
   '/education': '/education.md',
   '/photography': '/photography.md',
   '/music': '/music.md',
@@ -37,5 +38,5 @@ export default async (request, context) => {
 }
 
 export const config = {
-  path: ['/', '/experience', '/education', '/photography', '/music', '/contact'],
+  path: ['/', '/experience', '/projects', '/education', '/photography', '/music', '/contact'],
 }

@@ -2,6 +2,7 @@ export const strings = {
   en: {
     navHome: 'home',
     navExperience: 'experience',
+    navProjects: 'projects',
     navEducation: 'education',
     navPhotography: 'photography',
     navMusic: 'music',
@@ -11,12 +12,14 @@ export const strings = {
 
     eyebrowWhoami: 'whoami',
     eyebrowCareerLog: 'career log',
+    eyebrowProjects: 'things i built',
     eyebrowBackground: 'background',
     eyebrowGallery: 'gallery',
     eyebrowNowPlaying: 'now playing',
     eyebrowReachOut: 'reach out',
 
     headingExperience: 'Experience',
+    headingProjects: 'Projects',
     headingEducation: 'Education',
     headingSkills: 'Skills',
     headingContact: 'Contact',
@@ -27,6 +30,10 @@ export const strings = {
     btnGetInTouch: 'Get in touch',
     btnReadFullExperience: 'Read full experience ↗',
     btnReadFullEducation: 'Read full education ↗',
+    btnSeeAllProjects: 'See all projects ↗',
+
+    projectsIntro: 'A selection of things I have built, at work and on my own time.',
+    projectTechLabel: 'Tech used',
 
     contactIntro: 'Feel free to reach out via email or phone, or connect on social media.',
     labelEmail: 'Email',
@@ -68,6 +75,7 @@ export const strings = {
       whoami: 'about me',
       skills: 'list my skills',
       experience: 'go to the experience page',
+      projects: 'go to the projects page',
       education: 'go to the education page',
       contact: 'show contact info',
       neofetch: 'system info, but for a human',
@@ -81,6 +89,7 @@ export const strings = {
   da: {
     navHome: 'hjem',
     navExperience: 'erfaring',
+    navProjects: 'projekter',
     navEducation: 'uddannelse',
     navPhotography: 'fotografi',
     navMusic: 'musik',
@@ -90,12 +99,14 @@ export const strings = {
 
     eyebrowWhoami: 'whoami',
     eyebrowCareerLog: 'karriere-log',
+    eyebrowProjects: 'ting jeg har bygget',
     eyebrowBackground: 'baggrund',
     eyebrowGallery: 'galleri',
     eyebrowNowPlaying: 'spiller nu',
     eyebrowReachOut: 'sig hej',
 
     headingExperience: 'Erfaring',
+    headingProjects: 'Projekter',
     headingEducation: 'Uddannelse',
     headingSkills: 'Kompetencer',
     headingContact: 'Kontakt',
@@ -106,6 +117,10 @@ export const strings = {
     btnGetInTouch: 'Kontakt mig',
     btnReadFullExperience: 'Se fuld erfaring ↗',
     btnReadFullEducation: 'Se fuld uddannelse ↗',
+    btnSeeAllProjects: 'Se alle projekter ↗',
+
+    projectsIntro: 'Et udvalg af ting, jeg har bygget, på arbejdet og i min fritid.',
+    projectTechLabel: 'Anvendt teknologi',
 
     contactIntro: 'Du er velkommen til at kontakte mig via e-mail eller telefon, eller connecte på sociale medier.',
     labelEmail: 'E-mail',
@@ -147,6 +162,7 @@ export const strings = {
       whoami: 'om mig',
       skills: 'list mine kompetencer',
       experience: 'gå til erfaring-siden',
+      projects: 'gå til projekt-siden',
       education: 'gå til uddannelse-siden',
       contact: 'vis kontaktinfo',
       neofetch: 'systeminfo, men for et menneske',

@@ -6,7 +6,7 @@ import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx
 import { InstagramIcon, FacebookIcon, LinkedInIcon } from '../components/SocialIcons.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
-const HOME_HIDDEN_COMPANIES = ['Coop Denmark', 'Føtex']
+const HOME_HIDDEN_COMPANIES = ['Center for IT og Medicoteknologi', 'Coop Denmark', 'Føtex']
 const HOME_HIDDEN_SCHOOLS = ['Nørre Gymnasium']
 
 function isCurrent(entry) {
@@ -16,7 +16,7 @@ function isCurrent(entry) {
 
 export default function Home() {
   const { cv, t } = useLanguage()
-  const { profile, skills, experience, education } = cv
+  const { profile, skills, experience, education, projects } = cv
 
   return (
     <>
@@ -100,6 +100,29 @@ export default function Home() {
             {t('btnReadFullExperience')}
           </TimelineMore>
         </Timeline>
+      </section>
+
+      <section className="section">
+        <h2 className="section-heading">{t('headingProjects')}</h2>
+        <div className="project-grid">
+          {projects.map((project, i) => (
+            <Reveal as="article" className="card project-tile" delay={Math.min(i * 60, 300)} key={project.name}>
+              <p className="project-kicker">{project.context}</p>
+              <h3 className="project-tile-name">{project.name}</h3>
+              <p className="timeline-note">{project.description}</p>
+              <ul className="project-tech" aria-label={t('projectTechLabel')}>
+                {project.tech.slice(0, 4).map((tech) => (
+                  <li className="tech-tag" key={tech}>
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+        <Link to="/projects" className="timeline-more-link">
+          {t('btnSeeAllProjects')}
+        </Link>
       </section>
 
       <section className="section">

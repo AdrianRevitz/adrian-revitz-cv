@@ -39,7 +39,7 @@ const svg = `
 
   <text x="80" y="230" font-family="Arial, sans-serif" font-size="72" font-weight="800" fill="${TEXT}" letter-spacing="-2">Adrian W. Revitz</text>
 
-  <text x="80" y="290" font-family="Consolas, monospace" font-size="34" fill="${DIM}">IT Operations &amp; Business Informatics</text>
+  <text x="80" y="290" font-family="Consolas, monospace" font-size="34" fill="${DIM}">Digital Innovation · CRM &amp; AI Automation</text>
 
   <text x="80" y="360" font-family="Arial, sans-serif" font-size="26" fill="${TEXT}">Junior Analyst @ Pinetree Venture Partners</text>
   <text x="80" y="400" font-family="Arial, sans-serif" font-size="26" fill="${TEXT}">MSc Digital Innovation &amp; Management, IT University of Copenhagen</text>

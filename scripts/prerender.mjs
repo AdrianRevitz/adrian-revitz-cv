@@ -6,7 +6,7 @@ import path from 'node:path'
 import { render } from '../dist-server/entry-server.js'
 import { seoByRoute, SITE_URL } from '../src/data/seo.js'
 
-const routes = ['/', '/experience', '/education', '/photography', '/music', '/contact']
+const routes = ['/', '/experience', '/projects', '/education', '/photography', '/music', '/contact']
 const template = await fs.readFile(path.resolve('dist/index.html'), 'utf-8')
 
 function replaceTag(html, pattern, replacement) {
