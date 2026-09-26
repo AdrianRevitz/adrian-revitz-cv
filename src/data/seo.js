@@ -5,7 +5,7 @@ export const seoByRoute = {
     '/': {
       title: 'Adrian Wehmüller Revitz - Digital Innovation, CRM & AI Automation',
       description:
-        "Adrian Wehmüller Revitz builds CRM, reporting and AI-agent automation as a Junior Analyst at Pinetree Venture Partners, works in IT operations at Semler IT, and studies Digital Innovation & Management at the IT University of Copenhagen. CV, projects and portfolio.",
+        "Adrian Wehmüller Revitz works on CRM, reporting and AI-agent automation as a Junior Analyst at Pinetree Venture Partners, works in IT operations at Semler IT, and studies Digital Innovation & Management at the IT University of Copenhagen. CV, projects and portfolio.",
     },
     '/experience': {
       title: 'Experience - Adrian Wehmüller Revitz',
@@ -39,7 +39,7 @@ export const seoByRoute = {
     '/': {
       title: 'Adrian Wehmüller Revitz - Digital innovation, CRM- og AI-automatisering',
       description:
-        'Adrian Wehmüller Revitz bygger CRM-, rapporterings- og AI-agent-automatisering som Junioranalytiker hos Pinetree Venture Partners, arbejder med IT-drift hos Semler IT og læser Digital Innovation & Management på IT-Universitetet i København. CV, projekter og portfolio.',
+        'Adrian Wehmüller Revitz er med til at bygge CRM-, rapporterings- og AI-agent-automatisering som Junioranalytiker hos Pinetree Venture Partners, arbejder med IT-drift hos Semler IT og læser Digital Innovation & Management på IT-Universitetet i København. CV, projekter og portfolio.',
     },
     '/experience': {
       title: 'Erfaring - Adrian Wehmüller Revitz',

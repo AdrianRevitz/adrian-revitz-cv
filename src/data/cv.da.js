@@ -17,9 +17,10 @@ export const profile = {
   facebook: 'https://www.facebook.com/adrian.revitz/',
   facebookHandle: '@adrian.revitz',
   about: `Jeg arbejder der, hvor forretningsproblemer møder den teknologi, der
-    løser dem. Hos Pinetree Venture Partners driver jeg virksomhedens selvhostede
-    CRM og bygger automatiseringen omkring det, fra integrationer med AI-agenter
-    til investorrapportering genereret direkte fra live data. Hos Semler IT har
+    løser dem. Hos Pinetree Venture Partners arbejder jeg sammen med mine
+    kolleger på virksomhedens selvhostede CRM og automatiseringen omkring det,
+    fra integrationer med AI-agenter til investorrapportering genereret direkte
+    fra live data. Hos Semler IT har
     jeg arbejdet med IT-drift for Semler Gruppen siden 2022. Ved siden af læser
     jeg kandidaten i Digital Innovation & Management på IT-Universitetet i
     København, efter en bachelor i Global Business Informatics og et
@@ -56,9 +57,9 @@ export const experience = [
     end: null,
     location: 'København, Danmark',
     description:
-      'Ejer virksomhedens CRM-platform og automatiseringen omkring den, og bruger AI-assisteret udvikling til at bygge interne værktøjer, der erstatter manuelt arbejde.',
+      'En del af teamet, der bygger virksomhedens CRM-platform og automatiseringen omkring den, med AI-assisteret udvikling af interne værktøjer, der erstatter manuelt arbejde.',
     bullets: [
-      'Implementerede og driver virksomhedens selvhostede open source-CRM (Twenty)',
+      'Implementerede virksomhedens selvhostede open source-CRM (Twenty) sammen med kolleger',
       'Koblede CRM-systemet til AI-agenter via MCP og byggede workflows, opgørelser af seneste kontakt samt planlagte health checks med e-mailalarmer',
       'Automatiserede den kvartalsvise LP-rapportering: brandede Excel- og PowerPoint-rapporter genereret fra live CRM-data',
       'Byggede og deployede interne dashboards på Cloudflare Workers bag Cloudflare Access',
@@ -255,7 +256,7 @@ export const projects = [
     name: 'CRM- og investorrapportering',
     context: 'Pinetree Venture Partners',
     description:
-      'Gjorde et selvhostet open source-CRM til omdrejningspunktet for virksomhedens investorrelationer, med AI-agenter og automatiseret rapportering bygget ovenpå.',
+      'Bygget sammen med kolleger: et selvhostet open source-CRM som omdrejningspunkt for virksomhedens investorrelationer, med AI-agenter og automatiseret rapportering ovenpå.',
     bullets: [
       'Selvhostet Twenty CRM med egne workflows og opgørelser af seneste kontakt',
       'MCP-integration, så AI-agenter kan læse og opdatere CRM-data',

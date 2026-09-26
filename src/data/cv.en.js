@@ -17,9 +17,9 @@ export const profile = {
   facebook: 'https://www.facebook.com/adrian.revitz/',
   facebookHandle: '@adrian.revitz',
   about: `I work where business problems meet the technology that solves them.
-    At Pinetree Venture Partners I run the firm's self-hosted CRM and build the
-    automation around it, from AI-agent integrations to investor reporting
-    generated straight from live data. At Semler IT I have worked in IT
+    At Pinetree Venture Partners I work with my colleagues on the firm's
+    self-hosted CRM and the automation around it, from AI-agent integrations to
+    investor reporting generated straight from live data. At Semler IT I have worked in IT
     operations for Semler Gruppen since 2022. Alongside both, I am taking an MSc
     in Digital Innovation & Management at the IT University of Copenhagen, after
     a BSc in Global Business Informatics and an exchange semester at City
@@ -56,9 +56,9 @@ export const experience = [
     end: null,
     location: 'Copenhagen, Denmark',
     description:
-      "Own the firm's CRM platform and the automation around it, using AI-assisted development to build internal tools that replace manual work.",
+      "Part of the team building the firm's CRM platform and the automation around it, using AI-assisted development to create internal tools that replace manual work.",
     bullets: [
-      "Implemented and run the firm's self-hosted, open-source CRM (Twenty)",
+      "Implemented the firm's self-hosted, open-source CRM (Twenty) together with colleagues",
       'Connected the CRM to AI agents over MCP, and built custom workflows, contact-recency rollups and scheduled health checks with email alerting',
       'Automated quarterly LP reporting: branded Excel and PowerPoint reports generated from live CRM data',
       'Built and deployed internal dashboards on Cloudflare Workers behind Cloudflare Access',
@@ -257,7 +257,7 @@ export const projects = [
     name: 'CRM & investor-reporting automation',
     context: 'Pinetree Venture Partners',
     description:
-      "Turned a self-hosted open-source CRM into the hub of the firm's investor relations, with AI agents and automated reporting built on top of it.",
+      "Built with colleagues: a self-hosted open-source CRM as the hub of the firm's investor relations, with AI agents and automated reporting on top of it.",
     bullets: [
       'Self-hosted Twenty CRM with custom workflows and contact-recency rollups',
       'MCP integration so AI agents can read and update CRM records',
