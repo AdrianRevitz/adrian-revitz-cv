@@ -3,12 +3,16 @@
   --bg-elevated: #f4f6f8;
   --border: #e2e8f0;
   --text: #0f172a;
-  --text-dim: #64748b;
+  --text-dim: #5b6b80;
   --accent: #0f766e;
   --accent-dim: #0f766e22;
   --accent-ink: #ffffff;
-  --mono: 'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --accent-glow: #0f766e40;
+  --accent-wash: #0f766e0f;
+  --accent-wash-soft: #0f766e09;
+  --shadow: #0f172a33;
+  --mono: 'JetBrains Mono Variable', 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 :root[data-theme='dark'] {
@@ -20,6 +24,10 @@
   --accent: #5eead4;
   --accent-dim: #2dd4bf33;
   --accent-ink: #06110f;
+  --accent-glow: #2dd4bf55;
+  --accent-wash: #5eead41c;
+  --accent-wash-soft: #5eead411;
+  --shadow: #00000066;
 }
 
 * {
@@ -48,8 +56,8 @@ body {
   line-height: 1.6;
   transition: background-color 0.25s ease, color 0.25s ease;
   background-image:
-    radial-gradient(ellipse 900px 500px at 12% -5%, #5eead41c 0%, transparent 55%),
-    radial-gradient(ellipse 700px 500px at 88% 15%, #5eead411 0%, transparent 55%),
+    radial-gradient(ellipse 900px 500px at 12% -5%, var(--accent-wash) 0%, transparent 55%),
+    radial-gradient(ellipse 700px 500px at 88% 15%, var(--accent-wash-soft) 0%, transparent 55%),
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: auto, auto, 48px 48px, 48px 48px;
@@ -117,18 +125,20 @@ button:focus-visible,
 
 /* ---------- Reveal on scroll ---------- */
 
-.reveal {
+/* Only hide when JS is running (the inline script in index.html adds .js), so
+   the prerendered content stays visible without JavaScript or if it fails. */
+.js .reveal {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.reveal.is-visible .reveal {
+.js .reveal.is-visible .reveal {
   opacity: 1;
   transform: translateY(0);
 }
@@ -147,19 +157,6 @@ button:focus-visible,
 @keyframes blink-caret {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 /* ---------- Nav ---------- */
@@ -366,17 +363,75 @@ button:focus-visible,
   transform: translateY(-2px);
 }
 
-@media (max-width: 760px) {
+/* 44px touch targets on small screens and any touch-first device. */
+@media (max-width: 760px), (pointer: coarse) {
   .nav-menu-toggle,
   .theme-toggle {
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 2.75rem;
+    height: 2.75rem;
   }
 
   .lang-toggle {
-    height: 2.35rem;
+    min-width: 2.75rem;
+    height: 2.75rem;
     padding: 0 0.55rem;
   }
+
+  .btn-icon {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+  }
+
+  .btn {
+    min-height: 2.75rem;
+  }
+
+  .terminal-input {
+    min-height: 2.75rem;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding: 0 0.25rem;
+    margin: -0.75rem -0.25rem;
+  }
+
+  .nav-brand {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.75rem;
+  }
+  .hero-meta a {
+    min-height: 2.75rem;
+  }
+}
+
+/* ---------- Skip link / main ---------- */
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+  text-decoration: none;
+}
+
+main:focus {
+  outline: none;
 }
 
 /* ---------- Hero ---------- */
@@ -443,10 +498,27 @@ button:focus-visible,
   animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.32s both;
 }
 
-.hero-meta span {
+.hero-meta span,
+.hero-meta a {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.45rem;
+}
+
+.hero-meta a {
+  color: var(--text-dim);
+  text-underline-offset: 3px;
+}
+
+.hero-meta a:hover {
+  color: var(--accent);
+}
+
+.hero-meta svg {
+  flex-shrink: 0;
+  width: 0.95rem;
+  height: 0.95rem;
+  color: var(--accent);
 }
 
 .hero-actions {
@@ -490,7 +562,7 @@ button:focus-visible,
 .btn-primary:hover {
   background: var(--accent);
   opacity: 0.92;
-  box-shadow: 0 6px 24px -6px #2dd4bf66;
+  box-shadow: 0 6px 24px -6px var(--accent-glow);
 }
 
 .btn-icon {
@@ -511,6 +583,14 @@ button:focus-visible,
   border-radius: 10px;
   overflow: hidden;
   cursor: text;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* The input itself has no outline (it would clash with the prompt line), so
+   the whole window carries the keyboard focus indicator. */
+.terminal-window:has(.terminal-input:focus-visible) {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }
 
 .terminal-titlebar {
@@ -594,7 +674,7 @@ button:focus-visible,
 
 .terminal-input::placeholder {
   color: var(--text-dim);
-  opacity: 0.6;
+  opacity: 1;
 }
 
 /* ---------- Neofetch card ---------- */
@@ -735,13 +815,13 @@ button:focus-visible,
 
 .card:hover {
   border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
-  box-shadow: 0 12px 32px -16px #00000066;
+  box-shadow: 0 12px 32px -16px var(--shadow);
   transform: translateY(-2px);
 }
 
 .card-current {
   border-color: var(--accent);
-  box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 32px -18px #2dd4bf40;
+  box-shadow: 0 0 0 1px var(--accent-dim), 0 12px 32px -18px var(--accent-glow);
 }
 
 .company-title,
@@ -1285,15 +1365,24 @@ button:focus-visible,
   position: absolute;
   top: 1.25rem;
   right: 1.5rem;
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
-  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.lightbox-close svg,
+.lightbox-nav svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .lightbox-close:hover {
@@ -1311,8 +1400,10 @@ button:focus-visible,
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.06);
   color: #fff;
-  font-size: 1.6rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   cursor: pointer;
   transition: background 0.15s ease, border-color 0.15s ease;
 }
@@ -1331,10 +1422,10 @@ button:focus-visible,
 }
 
 @media (max-width: 640px) {
-  .lightbox-nav {
-    width: 2.2rem;
-    height: 2.2rem;
-    font-size: 1.3rem;
+  .lightbox-nav,
+  .lightbox-close {
+    width: 2.75rem;
+    height: 2.75rem;
   }
   .lightbox-prev {
     left: 0.5rem;
@@ -1373,7 +1464,7 @@ button:focus-visible,
 
 a.contact-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 12px 32px -18px #2dd4bf55;
+  box-shadow: 0 12px 32px -18px var(--accent-glow);
   transform: translateY(-3px);
   text-decoration: none;
 }
@@ -1411,5 +1502,36 @@ a.contact-card:hover {
 @media (max-width: 600px) {
   .hero-name {
     font-size: 1.8rem;
+  }
+}
+
+/* Last in the file so it overrides the component animations above. */
+/* Reduced motion: keep state feedback (colour, border, opacity changes) but
+   drop movement - no slide-ins, hover lifts or blinking caret. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .js .reveal,
+  .js .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-eyebrow,
+  .hero-name,
+  .hero-title,
+  .hero-about,
+  .hero-meta,
+  .hero-actions,
+  .hero-eyebrow::after {
+    animation: none;
+  }
+
+  *:not(.lightbox-nav):hover,
+  *:not(.lightbox-nav):active {
+    transform: none !important;
   }
 }

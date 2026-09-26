@@ -13,22 +13,27 @@ import { useSeo } from './hooks/useSeo.js'
 import { useScrollToTop } from './hooks/useScrollToTop.js'
 
 export default function App() {
-  const { lang } = useLanguage()
+  const { lang, t } = useLanguage()
   useSeo(lang)
   useScrollToTop()
 
   return (
     <div className="app-shell">
+      <a className="skip-link" href="#main">
+        {t('skipToContent')}
+      </a>
       <Nav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/education" element={<Education />} />
-        <Route path="/photography" element={<Photography />} />
-        <Route path="/music" element={<Music />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <main id="main" tabIndex={-1}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/photography" element={<Photography />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   )

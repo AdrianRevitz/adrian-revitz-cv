@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal.jsx'
 import Terminal from '../components/Terminal.jsx'
 import NeofetchCard from '../components/NeofetchCard.jsx'
 import { Timeline, TimelineItem, TimelineMore } from '../components/Timeline.jsx'
-import { InstagramIcon, FacebookIcon, LinkedInIcon } from '../components/SocialIcons.jsx'
+import { InstagramIcon, FacebookIcon, LinkedInIcon, PinIcon, MailIcon, PhoneIcon } from '../components/SocialIcons.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 
 const HOME_HIDDEN_COMPANIES = ['Center for IT og Medicoteknologi', 'Coop Denmark', 'Føtex']
@@ -27,9 +27,18 @@ export default function Home() {
         <p className="hero-about">{profile.about}</p>
 
         <div className="hero-meta">
-          <span>📍 {profile.location}</span>
-          <span>✉ {profile.email}</span>
-          <span>☎ {profile.phone}</span>
+          <span>
+            <PinIcon />
+            {profile.location}
+          </span>
+          <a href={`mailto:${profile.email}`}>
+            <MailIcon />
+            {profile.email}
+          </a>
+          <a href={`tel:${profile.phone.replace(/\s+/g, '')}`}>
+            <PhoneIcon />
+            {profile.phone}
+          </a>
         </div>
 
         <div className="hero-actions">

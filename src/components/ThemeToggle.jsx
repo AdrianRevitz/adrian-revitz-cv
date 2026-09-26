@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useLanguage } from '../i18n/LanguageContext.jsx'
+import { useIsomorphicLayoutEffect } from '../hooks/useIsomorphicLayoutEffect.js'
 
-function getInitialTheme() {
-  if (typeof document === 'undefined') return 'light'
+function getAppliedTheme() {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
 }
 
@@ -23,25 +24,30 @@ function MoonIcon() {
 }
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(getInitialTheme)
+  // Start from the prerendered default ('light') so hydration matches, then
+  // pick up the theme the inline script in index.html already applied.
+  const [theme, setTheme] = useState('light')
+  const { t } = useLanguage()
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
+  useIsomorphicLayoutEffect(() => {
+    setTheme(getAppliedTheme())
+  }, [])
+
+  function toggle() {
+    const next = theme === 'light' ? 'dark' : 'light'
+    setTheme(next)
+    document.documentElement.setAttribute('data-theme', next)
     try {
-      localStorage.setItem('theme', theme)
+      localStorage.setItem('theme', next)
     } catch (e) {
       // ignore (e.g. storage disabled)
     }
-  }, [theme])
+  }
+
+  const label = theme === 'light' ? t('themeToDark') : t('themeToLight')
 
   return (
-    <button
-      type="button"
-      className="theme-toggle"
-      aria-label={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-      title={theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
-      onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
-    >
+    <button type="button" className="theme-toggle" aria-label={label} title={label} onClick={toggle}>
       {theme === 'light' ? <SunIcon /> : <MoonIcon />}
     </button>
   )

@@ -6,7 +6,9 @@ import { getNeofetchFields } from '../data/neofetch.js'
 export default function Terminal() {
   const { cv, lang, t } = useLanguage()
   const navigate = useNavigate()
-  const [lines, setLines] = useState(() => [{ type: 'output', text: t('terminalWelcome') }])
+  // The welcome line is stored as a marker and translated at render time, so
+  // it follows the language once the stored preference is applied.
+  const [lines, setLines] = useState([{ type: 'welcome' }])
   const [value, setValue] = useState('')
   const bodyRef = useRef(null)
   const inputRef = useRef(null)
@@ -86,13 +88,19 @@ export default function Terminal() {
         <span className="terminal-titlebar-label">guest@adrian-revitz: ~</span>
       </div>
       <div className="terminal-body" ref={bodyRef}>
-        {lines.map((line, i) => (
-          <pre className={`terminal-line terminal-line-${line.type}`} key={i}>
-            {line.type === 'input' ? `guest@adrian-revitz:~$ ${line.text}` : line.text}
-          </pre>
-        ))}
+        <div role="log" aria-live="polite" aria-label={t('terminalOutputLabel')}>
+          {lines.map((line, i) => (
+            <pre className={`terminal-line terminal-line-${line.type === 'welcome' ? 'output' : line.type}`} key={i}>
+              {line.type === 'input'
+                ? `guest@adrian-revitz:~$ ${line.text}`
+                : line.type === 'welcome'
+                  ? t('terminalWelcome')
+                  : line.text}
+            </pre>
+          ))}
+        </div>
         <form className="terminal-input-row" onSubmit={onSubmit}>
-          <span className="terminal-prompt">guest@adrian-revitz:~$</span>
+          <span className="terminal-prompt" aria-hidden="true">guest@adrian-revitz:~$</span>
           <input
             ref={inputRef}
             className="terminal-input"
@@ -101,7 +109,7 @@ export default function Terminal() {
             placeholder={t('terminalPlaceholder')}
             autoComplete="off"
             spellCheck={false}
-            aria-label="Terminal input"
+            aria-label={t('terminalInputLabel')}
           />
         </form>
       </div>

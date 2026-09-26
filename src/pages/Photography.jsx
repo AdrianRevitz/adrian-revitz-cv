@@ -3,6 +3,7 @@ import Reveal from '../components/Reveal.jsx'
 import PhotoLightbox from '../components/PhotoLightbox.jsx'
 import { useLanguage } from '../i18n/LanguageContext.jsx'
 import { photos } from '../data/photos.js'
+import { getPhotoAlt } from '../data/photoAlts.js'
 import { formatPhotoDate, formatShutter, formatAperture } from '../utils/photoFormat.js'
 
 function tripDateRange(lang) {
@@ -57,7 +58,7 @@ export default function Photography() {
               loading="lazy"
               width={photo.width}
               height={photo.height}
-              alt={t('photoAlt')(i + 1, photos.length, formatPhotoDate(photo.date, lang))}
+              alt={getPhotoAlt(photo, t('photoAlt')(i + 1, photos.length, formatPhotoDate(photo.date, lang)), lang)}
             />
             <div className="photo-caption">
               <span>{formatPhotoDate(photo.date, lang)}</span>

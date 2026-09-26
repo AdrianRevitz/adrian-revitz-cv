@@ -7,7 +7,16 @@ import { render } from '../dist-server/entry-server.js'
 import { seoByRoute, SITE_URL } from '../src/data/seo.js'
 
 const routes = ['/', '/experience', '/projects', '/education', '/photography', '/music', '/contact']
-const template = await fs.readFile(path.resolve('dist/index.html'), 'utf-8')
+const baseTemplate = await fs.readFile(path.resolve('dist/index.html'), 'utf-8')
+
+// Preload the two Latin font files (self-hosted via @fontsource) so the browser
+// fetches them with the HTML instead of discovering them late through the CSS.
+const assets = await fs.readdir(path.resolve('dist/assets'))
+const preloadFonts = assets
+  .filter((file) => /^(inter|jetbrains-mono)-latin-wght-normal-.*\.woff2$/.test(file))
+  .map((file) => `<link rel="preload" href="/assets/${file}" as="font" type="font/woff2" crossorigin />`)
+  .join('\n    ')
+const template = preloadFonts ? baseTemplate.replace('</title>', `</title>\n    ${preloadFonts}`) : baseTemplate
 
 function replaceTag(html, pattern, replacement) {
   if (!pattern.test(html)) {
