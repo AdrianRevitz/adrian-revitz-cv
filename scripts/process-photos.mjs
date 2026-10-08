@@ -1,12 +1,13 @@
 // Regenerates src/data/photos.js and public/photos/ from a source folder of JPEGs.
-// Usage: node scripts/process-photos.mjs ["C:\\path\\to\\photos"]
-// Defaults to C:\Users\adrev\Documents\Pictures if no path is given.
+// Usage: node scripts/process-photos.mjs ["/path/to/photos"]
+// Defaults to ~/Pictures if no path is given.
 import exifr from 'exifr'
 import sharp from 'sharp'
 import fs from 'node:fs/promises'
 import path from 'node:path'
+import os from 'node:os'
 
-const SOURCE_DIR = process.argv[2] || 'C:\\Users\\adrev\\Documents\\Pictures'
+const SOURCE_DIR = process.argv[2] || path.join(os.homedir(), 'Pictures')
 const OUT_DIR = path.resolve('public/photos')
 const DATA_FILE = path.resolve('src/data/photos.js')
 const FULL_WIDTH = 1600

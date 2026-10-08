@@ -55,12 +55,22 @@ with a clean light theme as the default (dark mode available via toggle).
   employment type, and degree names are translated per file.
   - `experience`: array of entries; grouped ones (multiple roles at the same
     company, e.g. Semler IT) have `group: true` and a `roles` array instead of
-    top-level `role`/`period`/etc.
+    top-level `role`/`start`/etc.
+  - Dates: experience roles store `start`/`end` as `'YYYY-MM'` (`end: null` =
+    current). The displayed `period`, `duration`, the group total appended to
+    `groupNote`, and `profile.age` (from `profile.born`) are all derived by
+    `withComputedDates()` in `src/utils/cvDates.js` - never hand-write them.
+    It counts months inclusively (LinkedIn style) against `__BUILD_DATE__`
+    (a Vite `define`), so SSR output and hydration always agree; durations
+    refresh on each build. Education periods are still plain strings.
+  - `projects`: cards for the `/projects` page and the Home projects section
+    (`name`, `context`, `description`, `bullets`, `tech`, optional `link`).
   - `education`: same group pattern (`programs` array) — the ITU entry groups
     the Master's and Bachelor's together.
   - Home page hides some entries from its summarized timeline via
     `HOME_HIDDEN_COMPANIES` / `HOME_HIDDEN_SCHOOLS` in `src/pages/Home.jsx`
-    (currently: Coop Denmark, Føtex, Nørre Gymnasium) — full detail is still on
+    (currently: Center for IT og Medicoteknologi, Coop Denmark, Føtex, Nørre
+    Gymnasium) — full detail is still on
     the dedicated `/experience` and `/education` pages, linked via a
     "Read full…" button.
 - `src/data/photos.js` — Photography page gallery data (EXIF metadata per
@@ -87,16 +97,35 @@ with a clean light theme as the default (dark mode available via toggle).
   `localStorage` before paint to avoid a flash of the wrong theme. Default is
   **light** regardless of OS preference (explicit product decision). Toggle is
   `ThemeToggle.jsx`.
+- **Hydration-safe preferences**: the prerendered HTML is always English and
+  light. `LanguageProvider` and `ThemeToggle` therefore start from those
+  defaults and apply the stored language/theme in
+  `useIsomorphicLayoutEffect` (`src/hooks/`), after hydration but before
+  paint. Don't read `localStorage` in a `useState` initializer - it causes
+  hydration mismatches for Danish or dark-mode visitors.
+- **Fonts**: self-hosted Inter and JetBrains Mono variable fonts via
+  `@fontsource-variable/*` (imported in `main.jsx`); no Google Fonts request.
+  `scripts/prerender.mjs` injects `<link rel="preload">` for the two Latin
+  woff2 files.
 - **Reveal-on-scroll**: `src/components/Reveal.jsx` wraps an element, adds
-  `.reveal`/`.is-visible` classes via IntersectionObserver; respects
-  `prefers-reduced-motion`.
+  `.reveal`/`.is-visible` classes via IntersectionObserver. Content is only
+  hidden under `.js .reveal` (the inline script in `index.html` adds `js` to
+  `<html>`), so the prerendered page stays readable without JavaScript. The
+  `prefers-reduced-motion` block is last in `index.css` so it wins the
+  cascade; it drops movement but keeps colour/opacity feedback.
+- **Accessibility structure**: `App.jsx` has a skip link and `<main id="main">`;
+  the terminal output is a `role="log"` live region; `PhotoLightbox.jsx` is a
+  modal dialog that traps focus and returns it to the tile. Gallery alt text
+  lives in `src/data/photoAlts.js` (keyed by photo id, en/da), since
+  `photos.js` is generated - add an entry there when adding photos.
 - **Timeline component**: `src/components/Timeline.jsx` (`Timeline`,
   `TimelineItem`, `TimelineMore`) — the connected-dot vertical timeline used on
   the Home page for experience/education, including the "current role/degree"
   glow treatment and the trailing "⋯ + read more" entry.
 - **Terminal**: `src/components/Terminal.jsx` — interactive fake shell on the
   Home page. Commands are matched via a plain `switch` (no `eval`, safe by
-  construction): `help`, `whoami`, `skills`, `experience`, `education`,
+  construction): `help`, `whoami`, `skills`, `experience`, `projects`,
+  `education`,
   `contact`, `neofetch`, `sudo hire-me` (easter egg, navigates to /contact),
   `clear`. Command names stay in English regardless of UI language; only the
   output text is translated.
@@ -152,7 +181,9 @@ touch Netlify build minutes):
   `scripts/generate-sitemap.mjs`, and add an entry (both `en`/`da`) to
   `seoByRoute` in `src/data/seo.js`. Missing any of these means that route
   either won't prerender, won't appear in the sitemap, or will fall back to
-  generic/home-page SEO metadata.
+  generic/home-page SEO metadata. Also add it to the nav links in `Nav.jsx`,
+  the pages in `scripts/generate-markdown.mjs`, and both lists in
+  `netlify/edge-functions/markdown-negotiation.js`.
 - JSON-LD `Person` structured data lives statically in `index.html` (not
   per-route — it describes the person, same on every page, which is correct).
 - `public/og-image.jpg` — generated by `scripts/generate-og-image.mjs` (sharp
@@ -166,7 +197,7 @@ touch Netlify build minutes):
 
 - `scripts/process-photos.mjs` — regenerates `public/photos/` (full + thumb
   JPEGs) and `src/data/photos.js` from a source folder of JPEGs (default
-  `C:\Users\adrev\Documents\Pictures`, or pass a path as an argument). Uses
+  `~/Pictures`, or pass a path as an argument). Uses
   `exifr` (EXIF parsing) and `sharp` (resize/compress), both devDependencies.
   Re-run this if the user adds more photos to feature.
 - `scripts/generate-og-image.mjs` — regenerates `public/og-image.jpg`.

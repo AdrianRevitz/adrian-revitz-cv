@@ -34,7 +34,8 @@ this repo for auto-deploy on push to `master`).
 - **English/Danish** — toggle in the nav, persisted, defaults to English.
   Every page and all CV content is translated.
 - **Interactive terminal** on the home page — try `help`, `whoami`, `skills`,
-  `experience`, `education`, `contact`, `neofetch`, `sudo hire-me`, `clear`.
+  `experience`, `projects`, `education`, `contact`, `neofetch`, `sudo hire-me`,
+  `clear`.
 - **Neofetch-style stats card**, sharing data with the terminal's `neofetch`
   command.
 - **Photography gallery** — a masonry grid with a lightbox, built from real
@@ -51,11 +52,11 @@ this repo for auto-deploy on push to `master`).
   `scripts/process-photos.mjs`, don't hand-edit.
 - `src/i18n/` — `LanguageContext.jsx` (the `useLanguage()` hook) and
   `strings.js` (all UI copy in `en`/`da`).
-- `src/pages/` — Home, Experience, Education, Photography, Music, Contact.
+- `src/pages/` — Home, Experience, Projects, Education, Photography, Music, Contact.
 - `src/components/` — Nav, Footer, ThemeToggle, LanguageToggle, Terminal,
   NeofetchCard, PhotoLightbox, Timeline, Reveal.
 - `src/index.css` — the whole theme (CSS custom properties for light/dark).
 - `scripts/process-photos.mjs` — regenerates the photo gallery (resized
   JPEGs + EXIF data) from a folder of source photos. Run
   `node scripts/process-photos.mjs [path-to-photos]` after adding new ones
-  (defaults to `C:\Users\adrev\Documents\Pictures` if no path is given).
+  (defaults to `~/Pictures` if no path is given).
